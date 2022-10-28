@@ -1,0 +1,711 @@
+Kingdom	Phylum	Class	Order	Family	Genus	Species	id
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter guillouiae	MYb10
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter johnsonii	MYb158
+Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Weeksellaceae	Chryseobacterium	Chryseobacterium sp.	MYb328
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp.	MYb388
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	MYb191,MYb177
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Lelliottia	Lelliottia amnigena	JUb66
+Bacteria	Proteobacteria	Alphaproteobacteria	Hyphomicrobiales	Brucellaceae	Ochrobactrum	Ochrobactrum sp.	MYb379
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Pantoea	Pantoea nemavictus	BIGb0393
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Escherichia	Escherichia coli	OP50
+Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Weeksellaceae	Chryseobacterium	Chryseobacterium culicis	MYb25
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Brucella	""	MYb71,MYb49
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium multivorum	BIGb0170
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Comamonas	""	MYb396,MYb69,MYb21
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	MYb396,MYb69,MYb21
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Enterobacter	Enterobacter cloacae	CEent1
+Bacteria	Proteobacteria	Alphaproteobacteria	Hyphomicrobiales	Brucellaceae	Ochrobactrum	Ochrobactrum pituitosum	MYb58
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	Stenotrophomonas indicatrix	JUb19
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Enterobacter	Enterobacter sp. 638	MYb186
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Enterobacter	Enterobacter cloacae	CEent1
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp.	MYb388
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia sp.	MYb375
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas sp.	MYb541
+Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	""	unknown
+Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Weeksellaceae	Chryseobacterium	Chryseobacterium sp.	MYb264
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp.	MYb388
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	Limosilactobacillus	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp.	MYb388
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Pantoea	Pantoea nemavictus	BIGb0393
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Listeriaceae	Listeria	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas lurida	MYb11
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter	""	MYb176,MYb174
+Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Weeksellaceae	Chryseobacterium	Chryseobacterium culicis	MYb25
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Escherichia	Escherichia coli	OP50
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas berkeleyensis	MSPm1
+Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Weeksellaceae	Chryseobacterium	Chryseobacterium sp.	MYb328
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas berkeleyensis	MSPm1
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Salmonella	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	MYb371,MYb331,MYb330,MYb177
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Escherichia	Escherichia coli	OP50
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Enterobacter	Enterobacter cloacae	CEent1
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Lelliottia	""	JUb66,MYb186
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia sp.	MYb416
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Bacillus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas sp.	MYb398
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp.	MYb382
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia billingiae	MYb121
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	Pseudomonas fluorescence	MYb115
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter guillouiae	MYb10
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter	""	MYb176,MYb174
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidetes	Flavobacteriia	Flavobacteriales	Weeksellaceae	Chryseobacterium	Chryseobacterium scophthalmum	JUb44
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia sp.	MYb416
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Gluconobacter	Gluconobacter albidus	MYb596
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia sp.	MYb416
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	Burkholderia-Caballeronia-Paraburkholderia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Lelliottia	Lelliottia amnigena	JUb66
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia billingiae	MYb121
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodospirillales	Acetobacteraceae	Gluconobacter	Gluconobacter cerinus	MYb595
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	MYb191,MYb177
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Oxalobacteraceae	Undibacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Cutibacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	MYb191,MYb177
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Haematobacter	""	unknown
+Bacteria	Firmicutes	Negativicutes	Veillonellales-Selenomonadales	Veillonellaceae	Veillonella	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Porphyromonadaceae	Porphyromonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingomonas	Sphingomonas molluscorum	JUb134
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Enhydrobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	MYb191,MYb177
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter johnsonii	MYb158
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiales Incertae Sedis	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Firmicutes	Negativicutes	Veillonellales-Selenomonadales	Veillonellaceae	Veillonella	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Dolosigranulum	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Brevundimonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Prevotellaceae	Alloprevotella	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Pelomonas	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Frankiales	Nakamurellaceae	Nakamurella	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Bdellovibrionota	Bdellovibrionia	Bdellovibrionales	Bdellovibrionaceae	Bdellovibrio	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Kinneretia	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	""	unknown
+Bacteria	Chloroflexi	KD4-96	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Faecalibacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingorhabdus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhizobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Siccibacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	MYb371,MYb331,MYb330,MYb177
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	Acinetobacter johnsonii	MYb158
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Family XI	Anaerococcus	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Patescibacteria	Saccharimonadia	Saccharimonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Pseudolabrys	""	unknown
+Bacteria	Actinobacteriota	Acidimicrobiia	Microtrichales	Iamiaceae	Iamia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Shimwellia	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Anaerovoracaceae	Mogibacterium	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Myxococcota	Polyangia	Polyangiales	Phaselicystidaceae	Phaselicystis	""	unknown
+Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	[Ruminococcus] torques group	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Barnesiellaceae	Barnesiella	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rhodobacter	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Cellulomonadaceae	Cellulomonas	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Streptosporangiales	Thermomonosporaceae	Thermobispora	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Kinneretia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Micrococcaceae	Kocuria	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Knoellia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Micrococcaceae	Kocuria	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Peptostreptococcaceae	Romboutsia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Family XI	Peptoniphilus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Pasteurellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Verrucomicrobiota	Verrucomicrobiae	Chthoniobacterales	Xiphinematobacteraceae	Candidatus Xiphinematobacter	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Marmoricola	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Microscillaceae	Ohtaekwangia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Pedobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Micrococcaceae	Micrococcus	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Variovorax	""	unknown
+Bacteria	Planctomycetota	Planctomycetes	Gemmatales	Gemmataceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella_9	""	unknown
+Bacteria	Firmicutes	Clostridia	""	""	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	R7C24	""	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Phenylobacterium	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Jeotgalicoccus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Pasteurellaceae	Frederiksenia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Nosocomiicoccus	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Haematobacter	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Dermacoccaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Paramesorhizobium	""	unknown
+Bacteria	Acidobacteriota	Acidobacteriae	Bryobacterales	Bryobacteraceae	Bryobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Lachnoclostridium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Falsochrobactrum	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Croceitalea	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Micrococcaceae	Micrococcus	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Spirochaetota	Brevinematia	Brevinematales	Brevinemataceae	Brevinema	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Tabrizicola	""	unknown
+Bacteria	Patescibacteria	Saccharimonadia	Saccharimonadales	""	""	""	unknown
+Bacteria	Nitrospirota	Nitrospiria	Nitrospirales	Nitrospiraceae	Nitrospira	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Aerococcaceae	Ignavigranum	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Aerococcaceae	Ignavigranum	""	unknown
+Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Blautia	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Brevundimonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Actinobacteriota	Acidimicrobiia	Microtrichales	Ilumatobacteraceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	MYb191,MYb177
+Bacteria	Actinobacteriota	Acidimicrobiia	Microtrichales	Ilumatobacteraceae	CL500-29 marine group	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Capnocytophaga	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Family XI	Helcococcus	""	unknown
+Bacteria	Actinobacteriota	Thermoleophilia	Gaiellales	""	""	""	unknown
+Bacteria	Patescibacteria	Gracilibacteria	Absconditabacteriales (SR1)	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rickettsiales	Mitochondria	""	""	unknown
+Bacteria	Deinococcota	Deinococci	Deinococcales	Deinococcaceae	Deinococcus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Spirosomaceae	Lacihabitans	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Variovorax	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Chloroflexi	KD4-96	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Brevibacteriaceae	Brevibacterium	""	unknown
+Bacteria	Patescibacteria	Parcubacteria	""	""	""	""	unknown
+Bacteria	Firmicutes	Negativicutes	Veillonellales-Selenomonadales	Veillonellaceae	Dialister	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Polymorphobacter	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Cutibacterium	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Family XI	Anaerococcus	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Pedococcus-Phycicoccus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Microscillaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella_9	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Aerococcaceae	Ignavigranum	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Plantibacter	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Propionicicella	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Pedobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Diplorickettsiales	Diplorickettsiaceae	Rickettsiella	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Hymenobacteraceae	Hymenobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Roseburia	""	unknown
+Bacteria	Acidobacteriota	Vicinamibacteria	Vicinamibacterales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	Aeribacillus	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Pseudorhodoplanes	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	Lautropia	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Nocardioides	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Pseudorhodoferax	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Actinobacteriota	MB-A2-108	""	""	""	""	unknown
+Bacteria	Acidobacteriota	Vicinamibacteria	Vicinamibacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Pseudaminobacter	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Conyzicola	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rubellimicrobium	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Anaerovoracaceae	[Eubacterium] brachy group	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Chroococcidiopsaceae	Aliterella	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Deinococcota	Deinococci	Deinococcales	Deinococcaceae	Deinococcus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Gemmatimonadota	Longimicrobia	Longimicrobiales	Longimicrobiaceae	""	""	unknown
+Bacteria	Actinobacteriota	Thermoleophilia	Solirubrobacterales	Solirubrobacteraceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Empedobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Jeotgalicoccus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Kinneretia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	Burkholderia-Caballeronia-Paraburkholderia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Buttiauxella	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Neokomagataea	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus	""	unknown
+Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Alcaligenaceae	Achromobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Actinobacteriota	Acidimicrobiia	Microtrichales	Ilumatobacteraceae	""	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Family XI	Ezakiella	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Rhodanobacteraceae	Chiayiivirga	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Conyzicola	""	unknown
+Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Subdoligranulum	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Chitinophagaceae	Ferruginibacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	env.OPS 17	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Sutterellaceae	Sutterella	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Corynebacteriaceae	Corynebacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Oxalobacteraceae	Undibacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Patescibacteria	Saccharimonadia	Saccharimonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Ornithinimicrobium	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	""	""	""	""	""	unknown
+Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Hungatella	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Neokomagataea	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Acidobacteriota	Vicinamibacteria	Vicinamibacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Tannerellaceae	Parabacteroides	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	""	""	""	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Bifidobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Firmicutes	Clostridia	Oscillospirales	[Eubacterium] coprostanoligenes group	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Actinobacteriota	Thermoleophilia	Gaiellales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Nitrosomonadaceae	MND1	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Nocardioides	""	unknown
+Bacteria	Patescibacteria	Saccharimonadia	Saccharimonadales	Saccharimonadaceae	TM7a	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Chitinophagaceae	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Microlunatus	""	unknown
+Bacteria	Bdellovibrionota	Bdellovibrionia	Bacteriovoracales	Bacteriovoracaceae	""	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Streptomycetales	Streptomycetaceae	Streptomyces	""	unknown
+Bacteria	Firmicutes	Clostridia	Peptostreptococcales-Tissierellales	Family XI	Anaerococcus	""	unknown
+Bacteria	Actinobacteriota	Thermoleophilia	Solirubrobacterales	67-14	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Staphylococcales	Staphylococcaceae	Staphylococcus	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium sensu stricto 1	""	unknown
+Bacteria	Firmicutes	Clostridia	Oscillospirales	[Eubacterium] coprostanoligenes group	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Cyanobacteria	Cyanobacteriia	Chloroplast	""	""	""	unknown
+Bacteria	Patescibacteria	Saccharimonadia	Saccharimonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Yersiniaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	Enterococcus	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Soonwooa	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Yokenella	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Ventosimonas	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	Erwinia	Erwinia sp.	MYb416
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Kinneretia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Nitrincolaceae	Balneatrix	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Isobaculum	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	""	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Isobaculum	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Atlantibacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Aquamonas	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	""	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Actinobacteriota	Actinobacteria	Streptomycetales	Streptomycetaceae	E1B-B3-114	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Aquamonas	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	""	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Bacillales	Bacillaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Carnobacteriaceae	Isobaculum	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Kinneretia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Aquamonas	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Kluyvera	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Kinneretia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidetes	Sphingobacteriia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	Sphingobacterium sp.	MYb388
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	HAW-RM37-2	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	HAW-RM37-2	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Cryomorphaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	""	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Yokenella	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	Limosilactobacillus	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	HAW-RM37-2	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquincola	""	unknown
+Bacteria	""	""	""	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Firmicutes	Bacilli	""	""	""	""	unknown
+Bacteria	Firmicutes	Bacilli	Lactobacillales	Enterococcaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	""	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Daeguia	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Erwiniaceae	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Sphingobacterium	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	""	""	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	""	""	""	unknown
+Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	""	""	unknown
+Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Candidatus Hemobacterium	""	unknown
+Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas	""	unknown
