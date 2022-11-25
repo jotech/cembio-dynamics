@@ -1,0 +1,294 @@
+GENE,DATABASE,PRODUCT
+CRP,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:CRP
+CPXAR,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:CPXAR
+OQXB,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:OQXB
+OqxB_1,resfinder,OqxB
+rcsB,vfdb,(rcsB) transcriptional regulator RcsB [RcsAB (VF0571) - Regulation (VFC0301)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+rpoS,vfdb,(rpoS) RNA polymerase sigma factor RpoS [RpoS (VF0112) - Regulation (VFC0301)] [Salmonella enterica subsp. enterica serovar Typhimurium str. LT2]
+fur,vfdb,(fur) ferric iron uptake transcriptional regulator [Fur (VF0113) - Regulation (VFC0301)] [Salmonella enterica subsp. enterica serovar Typhimurium str. LT2]
+vipB/tssC,vfdb,(vipB/tssC) type VI secretion system contractile sheath large subunit VipB [T6SS (VF0569) - Effector delivery system (VFC0086)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+hcp/tssD,vfdb,(hcp/tssD) type VI secretion system protein Hcp family [T6SS (VF0569) - Effector delivery system (VFC0086)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+FOSA,megares,Drugs:Fosfomycin:Fosfomycin_thiol_transferases:FOSA
+ACT,megares,Drugs:betalactams:Class_C_betalactamases:ACT
+SOXS,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_resistance_regulator:SOXS
+BACA,megares,Drugs:Bacitracin:Undecaprenyl_pyrophosphate_phosphatase:BACA
+EMRB,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRB
+KPN,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:KPN
+EMRR,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_regulator:EMRR
+OQXA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:OQXA
+ACRD,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_pumps:ACRD
+KPNO,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_SMR_efflux_pumps:KPNO
+BAER,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_regulator:BAER
+MDTC,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_pumps:MDTC
+MDTB,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_pumps:MDTB
+MDTA,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_pumps:MDTA
+HNS,megares,Drugs:Multi-drug_resistance:Multi-drug_RND_efflux_pumps:HNS
+MARR,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:MARR
+MARA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:MARA
+KPNF,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_SMR_efflux_pumps:KPNF
+MSBA,megares,Drugs:Multi-drug_resistance:Multi-drug_ABC_efflux_pumps:MSBA
+KDEA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:KDEA
+PBP2,megares,Drugs:betalactams:Penicillin_binding_protein:PBP2
+RAMA,megares,Drugs:Multi-drug_resistance:Multi-drug_RND_efflux_regulator:RAMA
+ACRB,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:ACRB
+fosA_7,resfinder,fosA
+blaACT-16_1,resfinder,blaACT-16
+OqxA_1,resfinder,OqxA
+galF,vfdb,(galF) GalU regulator GalF [Capsule (VF0560) - Immune modulation (VFC0258)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+gndA,vfdb,(gndA) NADP-dependent phosphogluconate dehydrogenase [Capsule (VF0560) - Immune modulation (VFC0258)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+vipA/tssB,vfdb,(vipA/tssB) type VI secretion system contractile sheath small subunit VipA [T6SS (VF0569) - Effector delivery system (VFC0086)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+tssF,vfdb,(tssF) type VI secretion system baseplate subunit TssF [T6SS (VF0569) - Effector delivery system (VFC0086)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+phoP,vfdb,(phoP) response regulator in two-component regulatory system with PhoQ [PhoPQ (VF0111) - Regulation (VFC0301)] [Salmonella enterica subsp. enterica serovar Typhimurium str. LT2]
+cgsD,vfdb,(cgsD) transcriptional regulator CsgD [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+ompA,vfdb,(ompA) outer membrane protein A [OmpA (VF0236) - Invasion (VFC0083)] [Escherichia coli O18:K1:H7 str. RS218]
+entA,vfdb,(entA) 23-dihydroxybenzoate-23-dehydrogenase [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+entB,vfdb,(entB) 23-dihydro-23-dihydroxybenzoate synthetase isochroismatase [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+entE,vfdb,(entE) enterobactin synthase subunit E [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+entS,vfdb,(entS) enterobactin exporter EntS [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+fepD,vfdb,(fepD) iron-enterobactin transporter membrane protein [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+fepG,vfdb,(fepG) iron-enterobactin transporter permease [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+fepC,vfdb,(fepC) iron-enterobactin transporter ATP-binding protein [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+fepA,vfdb,(fepA) outer membrane receptor FepA [Ent (VF0562) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+acrB,vfdb,(acrB) acriflavine resistance protein B [AcrAB (VF0568) - Antimicrobial activity/Competitive advantage (VFC0325)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+L1,megares,Drugs:betalactams:Class_B_betalactamases:L1
+APH3-DPRIME,megares,Drugs:Aminoglycosides:Aminoglycoside_O-phosphotransferases:APH3-DPRIME
+EMRBSM,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRBSM
+EMRASM,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRASM
+EMRCSM,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRCSM
+EMRRSM,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_regulator:EMRRSM
+SMET,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:SMET
+SME,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:SME
+blaL1_3,resfinder,blaL1
+aph(3')-IIc_1,resfinder,aph(3')-IIc
+pilT,vfdb,(pilT) twitching motility protein PilT [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+CPS,megares,Drugs:betalactams:Class_B_betalactamases:CPS
+ANT6,megares,Drugs:Aminoglycosides:Aminoglycoside_O-nucleotidyltransferases:ANT6
+vgrG/tssI,vfdb,(vgrG/tssI) type VI secretion system tip protein VgrG [T6SS (VF0569) - Effector delivery system (VFC0086)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+entA,vfdb,(entA) 23-dihydro-23-dihydroxybenzoate dehydrogenase EntA [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+cgsG,vfdb,(cgsG) curli production assembly/transport protein CsgG [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+MEXF,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MEXF
+MEXK,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MEXK
+MEXB,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MEXB
+PA1657,vfdb,(PA1657) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+PA1658,vfdb,(PA1658) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+PA1667,vfdb,(PA1667) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+algB,vfdb,(algB) two-component response regulator AlgB [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+algR,vfdb,(algR) alginate biosynthesis regulatory protein AlgR [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+pilG,vfdb,(pilG) twitching motility protein PilG [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+pilH,vfdb,(pilH) twitching motility protein PilH [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+pilI,vfdb,(pilI) twitching motility protein PilI [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+pilJ,vfdb,(pilJ) twitching motility protein PilJ [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+pilM,vfdb,(pilM) type IV pilus inner membrane platform protein PilM [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+waaG,vfdb,(waaG) B-band O-antigen polymerase [LPS (VF0085) - Immune modulation (VFC0258)] [Pseudomonas aeruginosa PAO1]
+algA,vfdb,(algA) phosphomannose isomerase / guanosine 5'-diphospho-D-mannose pyrophosphorylase [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+algI,vfdb,(algI) alginate o-acetyltransferase AlgI [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+alg8,vfdb,(alg8) alginate-c5-mannuronan-epimerase AlgG [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+algD,vfdb,(algD) GDP-mannose 6-dehydrogenase AlgD [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+rpoS,vfdb,(rpoS) RNA polymerase sigma factor RpoS [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+xcpR,vfdb,(xcpR) general secretion pathway protein E [Xcp secretion system (VF0084) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+xcpS,vfdb,(xcpS) general secretion pathway protein F [Xcp secretion system (VF0084) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+xcpT,vfdb,(xcpT) general secretion pathway protein G [Xcp secretion system (VF0084) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+PA3348,vfdb,(PA3348) chemotaxis protein methyltransferase [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+flgC,vfdb,(flgC) flagellar basal-body rod protein FlgC [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+flgG,vfdb,(flgG) flagellar basal-body rod protein FlgG [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+flgI,vfdb,(flgI) flagellar P-ring protein precursor FlgI [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fleQ,vfdb,(fleQ) transcriptional regulator FleQ [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliE,vfdb,(fliE) flagellar hook-basal body complex protein FliE [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliG,vfdb,(fliG) flagellar motor switch protein G [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliI,vfdb,(fliI) flagellum-specific ATP synthase FliI [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliM,vfdb,(fliM) flagellar motor switch protein FliM [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliN,vfdb,(fliN) flagellar motor switch protein FliN [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliP,vfdb,(fliP) flagellar biosynthetic protein FliP [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliQ,vfdb,(fliQ) flagellar biosynthetic protein FliQ [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+flhA,vfdb,(flhA) flagellar biosynthesis protein FlhA [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fleN,vfdb,(fleN) flagellar synthesis regulator FleN [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+fliA,vfdb,(fliA) flagellar biosynthesis sigma factor FliA [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+cheY,vfdb,(cheY) chemotaxis protein CheY [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+motC,vfdb,(motC) flagellar motor protein [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+PA1464,vfdb,(PA1464) purine-binding chemotaxis protein [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+tapW,vfdb,(tapW) twitching ATPase [Tap type IV pili (VF0475) - Adherence (VFC0001)] [Aeromonas hydrophila ML09-119]
+pilZ,vfdb,(pilZ) type 4 fimbrial biogenesis protein PilZ [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+algU,vfdb,(algU) alginate biosynthesis protein AlgZ/FimS [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+pilR,vfdb,(pilR) two-component response regulator PilR [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+algW,vfdb,(algW) AlgW protein [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+rpoN,vfdb,(rpoN) RNA polymerase factor sigma-54 [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+vfr,vfdb,(vfr) cAMP-regulatory protein [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+pilU,vfdb,(pilU) twitching motility protein PilU [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+crc,vfdb,(crc) catabolite repression control protein [Type IV pili (VF0082) - Adherence (VFC0001)] [Pseudomonas aeruginosa PAO1]
+hcpA,vfdb,(hcpA) secreted protein Hcp [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+APH3-PRIME,megares,Drugs:Aminoglycosides:Aminoglycoside_O-phosphotransferases:APH3-PRIME
+BLAA,megares,Drugs:betalactams:Class_A_betalactamases:BLAA
+MEXT,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:MEXT
+OXA,megares,Drugs:betalactams:Class_D_betalactamases:OXA
+aph(3')-VIb_1,resfinder,aph(3')-VIb
+blaOXA-274_1,resfinder,blaOXA-274
+pilG,vfdb,(pilG) twitching motility response regulator PilG [TFP (VF1334) - Adherence (VFC0001)] [Acinetobacter baumannii ACICU]
+pilT,vfdb,(pilT) type IV pilus twitching motility protein PilT [TFP (VF1334) - Adherence (VFC0001)] [Acinetobacter baumannii ACICU]
+ompA,vfdb,(ompA) outer membrane protein OmpA [OmpA (VF0464) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+tssC,vfdb,(tssC) type VI secretion system contractile sheath large subunit [T6SS (VF1337) - Effector delivery system (VFC0086)] [Acinetobacter baumannii ACICU]
+hcp,vfdb,(hcp) type VI secretion system tube protein Hcp [T6SS (VF1337) - Effector delivery system (VFC0086)] [Acinetobacter baumannii ACICU]
+pseB,vfdb,(pseB) UDP-N-acetylglucosamine 46-dehydratase (inverting) [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+pseC,vfdb,(pseC) UDP-4-amino-4 6-dideoxy-N-acetyl-beta-L-altrosamine transaminase [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+pseF,vfdb,(pseF) pseudaminic acid cytidylyltransferase [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+pseH,vfdb,(pseH) UDP-4-amino-4 6-dideoxy-N-acetyl-beta-L-altrosamine N-acetyltransferase [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+pseI,vfdb,(pseI) pseudaminic acid synthase [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+ACICU_RS00445,vfdb,(ACICU_RS00445) hypothetical protein [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+ACICU_RS00450,vfdb,(ACICU_RS00450) capsular polysaccharide synthesis protein [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+ACICU_RS00455*,vfdb,(ACICU_RS00455*) EpsG family protein [Capsule (VF0465) - Immune modulation (VFC0258)] [Acinetobacter baumannii ACICU]
+EMHC,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:EMHC
+MEXE,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MEXE
+waaF,vfdb,(waaF) heptosyltransferase I [LPS (VF0085) - Immune modulation (VFC0258)] [Pseudomonas aeruginosa PAO1]
+pvdO,vfdb,(pvdO) pyoverdine biosynthesis protein PvdO [Pyoverdine (VF0094) - Nutritional/Metabolic factor (VFC0272)] [Pseudomonas aeruginosa PAO1]
+mbtH-like,vfdb,(mbtH-like) MbtH-like protein from the pyoverdine cluster [Pyoverdine (VF0094) - Nutritional/Metabolic factor (VFC0272)] [Pseudomonas aeruginosa PAO1]
+pvdH,vfdb,(pvdH) diaminobutyrate-2-oxoglutarate aminotransferase PvdH [Pyoverdine (VF0094) - Nutritional/Metabolic factor (VFC0272)] [Pseudomonas aeruginosa PAO1]
+pvdS,vfdb,(pvdS) extracytoplasmic-function sigma-70 factor  [Pyoverdine (VF0094) - Nutritional/Metabolic factor (VFC0272)] [Pseudomonas aeruginosa PAO1]
+flgH,vfdb,(flgH) flagellar L-ring protein precursor FlgH [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+flgB,vfdb,(flgB) flagellar basal body rod protein FlgB [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+hsiB1/vipA/tssB,vfdb,(hsiB1/vipA/tssB) type VI secretion system tubule-forming protein VipA [HSI-I (VF0334) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+hsiC1/vipB/tssC,vfdb,(hsiC1/vipB/tssC) type VI secretion system tubule-forming protein VipB [HSI-I (VF0334) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+hcp1,vfdb,(hcp1) type VI secretion system substrate Hcp1 [HSI-I (VF0334) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+clpV1,vfdb,(clpV1) type VI secretion system AAA+ family ATPase [HSI-I (VF0334) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+TTGB,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:TTGB
+SDEB,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:SDEB
+fliA,vfdb,(fliA) flagellar biosynthesis sigma factor [Flagella (VF0394) - Motility (VFC0204)] [Yersinia enterocolitica subsp. enterocolitica 8081]
+blaOXA-280_1,resfinder,blaOXA-280
+BUT,megares,Drugs:betalactams:Class_C_betalactamases:BUT
+QNRB,megares,Drugs:Fluoroquinolones:Quinolone_resistance_protein_Qnr:QNRB
+IncQ2_1,plasmidfinder,IncQ2_1__FJ696404
+ColRNAI_1,plasmidfinder,ColRNAI_1__DQ298019
+Col(pHAD28)_1,plasmidfinder,Col(pHAD28)_1__KU674895
+qnrB10_1,resfinder,qnrB10
+ugd,vfdb,(ugd) UDP-glucose 6-dehydrogenase [Capsule (VF0560) - Immune modulation (VFC0258)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+PA1664,vfdb,(PA1664) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+AMPH,megares,Drugs:betalactams:Penicillin_binding_protein:AMPH
+mdf(A)_1,resfinder,mdf(A)
+blaOXA-212_1,resfinder,blaOXA-212
+CGB,megares,Drugs:betalactams:Class_B_betalactamases:CGB
+CGA,megares,Drugs:betalactams:Class_A_betalactamases:CGA
+blaCGB-1_1,resfinder,blaCGB-1
+IND,megares,Drugs:betalactams:Class_B_betalactamases:IND
+blaIND-10_1,resfinder,blaIND-10
+BEPE,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:BEPE
+FLOR,megares,Drugs:Phenicol:Phenicol_resistance_MFS_efflux_pumps:FLOR
+floR_2,resfinder,floR
+acpXL,vfdb,(acpXL) acyl carrier protein [LPS (VF0367) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+bvrR,vfdb,(bvrR) response regulator transcription factor [BvrR-BvrS (VF0368) - Regulation (VFC0301)] [Brucella melitensis bv. 1 str. 16M]
+pgm,vfdb,(pgm) phosphoglucomutase [LPS (VF0367) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+cgs,vfdb,(cgs) cyclic beta 1-2 glucan synthetase [CG (VF0366) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+MEXI,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MEXI
+MEXQ,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MEXQ
+TTGA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:TTGA
+TTGC,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:TTGC
+mucD,vfdb,(mucD) serine protease MucD precursor [Alginate (VF0091) - Biofilm (VFC0271)] [Pseudomonas aeruginosa PAO1]
+PA1459,vfdb,(PA1459) chemotaxis-specific methylesterase [Flagella (VF0273) - Motility (VFC0204)] [Pseudomonas aeruginosa PAO1]
+PA1661,vfdb,(PA1661) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+PA1660,vfdb,(PA1660) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+PA1659,vfdb,(PA1659) hypothetical protein [HSI-2 (VF0943) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+pvdM,vfdb,(pvdM) dipeptidase precursor [Pyoverdine (VF0094) - Nutritional/Metabolic factor (VFC0272)] [Pseudomonas aeruginosa PAO1]
+waaP,vfdb,(waaP) UDP-glucose:(heptosyl) LPS alpha 13-glucosyltransferase WaaG [LPS (VF0085) - Immune modulation (VFC0258)] [Pseudomonas aeruginosa PAO1]
+PA2359,vfdb,(PA2359) transcriptional regulator [HSI-3 (VF0944) - Effector delivery system (VFC0086)] [Pseudomonas aeruginosa PAO1]
+VANRO,megares,Drugs:Glycopeptides:VanO-type_regulator:VANRO
+TET42,megares,Drugs:Tetracyclines:Tetracycline_resistance_MFS_efflux_pumps:TET42
+tet(42)_1,resfinder,tet(42)
+OCH,megares,Drugs:betalactams:Class_C_betalactamases:OCH
+blaOCH-4_1,resfinder,blaOCH-4
+kdsB,vfdb,(kdsB) 3-deoxy-manno-octulosonate cytidylyltransferase [LPS (VF0367) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+htrB,vfdb,(htrB) lipid A biosynthesis lauroyl acyltransferase [LPS (VF0367) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+kdsA,vfdb,(kdsA) 2-dehydro-3-deoxyphosphooctonate aldolase [LPS (VF0367) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+fabZ,vfdb,(fabZ) (3R)-hydroxymyristoyl ACP dehydratase [LPS (VF0367) - Immune modulation (VFC0258)] [Brucella melitensis bv. 1 str. 16M]
+bvrS,vfdb,(bvrS) stimulus-sensing domain-containing protein [BvrR-BvrS (VF0368) - Regulation (VFC0301)] [Brucella melitensis bv. 1 str. 16M]
+blaOCH-7_1,resfinder,blaOCH-7
+MDTP,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MDTP
+MDTO,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MDTO
+MDTN,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MDTN
+EPTA,megares,Drugs:Cationic_antimicrobial_peptides:Lipid_A_modification:EPTA
+BLAEC,megares,Drugs:betalactams:Class_C_betalactamases:BLAEC
+EMRD,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRD
+BCR,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:BCR
+ROBA,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_pumps:ROBA
+EMRA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRA
+MDTK,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MATE_efflux_pumps:MDTK
+MDTH,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:MDTH
+MDTG,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:MDTG
+MDTJ,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_SMR_efflux_pumps:MDTJ
+MDTI,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_SMR_efflux_pumps:MDTI
+GADX,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:GADX
+GADW,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:GADW
+MDTF,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MDTF
+MDTE,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:MDTE
+ASMA,megares,Drugs:Multi-drug_resistance:Multi-drug_RND_efflux_regulator:ASMA
+BAES,megares,Multi-compound:Drug_and_biocide_and_metal_resistance:Drug_and_biocide_and_metal_RND_efflux_regulator:BAES
+UGD,megares,Drugs:Cationic_antimicrobial_peptides:Lipid_A_modification:UGD
+ACRA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:ACRA
+PMRF,megares,Drugs:Cationic_antimicrobial_peptides:Lipid_A_modification:PMRF
+MVRC,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_SMR_efflux_pumps:MVRC
+MPHB,megares,Drugs:MLS:Macrolide_phosphotransferases:MPHB
+EVGS,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_regulator:EVGS
+EMRK,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRK
+EMRY,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:EMRY
+ACRF,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:ACRF
+ACRE,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_pumps:ACRE
+ACRS,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_RND_efflux_regulator:ACRS
+MDFA,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:MDFA
+KDPE,megares,Drugs:Aminoglycosides:Aminoglycoside_efflux_pumps:KDPE
+MDTM,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_MFS_efflux_pumps:MDTM
+YOGI,megares,Multi-compound:Drug_and_biocide_resistance:Drug_and_biocide_ABC_efflux_pumps:YOGI
+formA_1,resfinder,formA
+aslA,vfdb,(aslA) putative arylsulfatase [AslA (VF0238) - Invasion (VFC0083)] [Escherichia coli O18:K1:H7 str. RS218]
+yagV/ecpE,vfdb,(yagV/ecpE) E. coli common pilus chaperone EcpE [ECP (VF0404) - Adherence (VFC0001)] [Escherichia coli O157:H7 str. EDL933]
+yagW/ecpD,vfdb,(yagW/ecpD) polymerized tip adhesin of ECP fibers [ECP (VF0404) - Adherence (VFC0001)] [Escherichia coli O157:H7 str. EDL933]
+yagX/ecpC,vfdb,(yagX/ecpC) E. coli common pilus usher EcpC [ECP (VF0404) - Adherence (VFC0001)] [Escherichia coli O157:H7 str. EDL933]
+yagY/ecpB,vfdb,(yagY/ecpB) E. coli common pilus chaperone EcpB [ECP (VF0404) - Adherence (VFC0001)] [Escherichia coli O157:H7 str. EDL933]
+yagZ/ecpA,vfdb,(yagZ/ecpA) E. coli common pilus structural subunit EcpA [ECP (VF0404) - Adherence (VFC0001)] [Escherichia coli O157:H7 str. EDL933]
+ykgK/ecpR,vfdb,(ykgK/ecpR) regulator protein EcpR [ECP (VF0404) - Adherence (VFC0001)] [Escherichia coli O157:H7 str. EDL933]
+fdeC,vfdb,(fdeC) adhesin FdeC [FdeC (VF0506) - Adherence (VFC0001)] [Escherichia coli O45:K1:H7 str. S88]
+espL1,vfdb,(espL1) Type III secretion system effector espL1 [TTSS secreted effectors (VF1111) - Effector delivery system (VFC0086)] [Escherichia coli O55:H7 str. CB9615]
+csgC,vfdb,(csgC) curli assembly protein CsgC [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+csgA,vfdb,(csgA) curlin major subunit CsgA [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+csgB,vfdb,(csgB) curlin minor subunit CsgB [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+cgsE,vfdb,(cgsE) curli production assembly/transport protein CsgE [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+cgsF,vfdb,(cgsF) curli production assembly/transport protein CsgF [Curli fibers (VF1138) - Adherence (VFC0001)] [Escherichia coli O25b:H4-ST131]
+gspC,vfdb,(gspC) general secretion pathway protein C [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspD,vfdb,(gspD) general secretion pathway protein D [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspE,vfdb,(gspE) general secretion pathway protein E [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspF,vfdb,(gspF) general secretion pathway protein F [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspG,vfdb,(gspG) general secretion pathway protein G [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspH,vfdb,(gspH) general secretion pathway protein H [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspI,vfdb,(gspI) general secretion pathway protein I [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspJ,vfdb,(gspJ) general secretion pathway protein J [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspK,vfdb,(gspK) general secretion pathway protein K [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspL,vfdb,(gspL) general secretion pathway protein L [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+gspM,vfdb,(gspM) general secretion pathway protein M [T2SS (VF0333) - Effector delivery system (VFC0086)] [Shigella dysenteriae Sd197]
+kpsM,vfdb,(kpsM) Polysialic acid transport protein [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+allB,vfdb,(allB) allantoinase [Allantion utilization (VF0572) - Nutritional/Metabolic factor (VFC0272)] [Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044]
+espX5,vfdb,(espX5) Type III secretion system effector EspX5 [TTSS secreted effectors (VF1111) - Effector delivery system (VFC0086)] [Escherichia coli O55:H7 str. CB9615]
+vgrG/tssI,vfdb,(vgrG/tssI) type VI secretion system effector VgrG [T6SS (VF0579) - Effector delivery system (VFC0086)] [Shigella sonnei Ss046]
+entD,vfdb,(entD) phosphopantetheinyl transferase component of enterobactin synthase multienzyme complex [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fepA,vfdb,(fepA) ferrienterobactin outer membrane transporter [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fes,vfdb,(fes) enterobactin/ferric enterobactin esterase [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+entF,vfdb,(entF) enterobactin synthase multienzyme complex component ATP-dependent [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fepE,vfdb,(fepE) LPS O-antigen length regulator [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fepC,vfdb,(fepC) ferrienterobactin ABC transporter ATPase [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fepG,vfdb,(fepG) iron-enterobactin ABC transporter permease [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fepD,vfdb,(fepD) ferrienterobactin ABC transporter permease [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+entS,vfdb,(entS) enterobactin exporter iron-regulated [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fepB,vfdb,(fepB) ferrienterobactin ABC transporter periplasmic binding protein [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+entC,vfdb,(entC) isochorismate synthase 1 [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+entE,vfdb,(entE) 23-dihydroxybenzoate-AMP ligase component of enterobactin synthase multienzyme complex [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+entB,vfdb,(entB) isochorismatase [Enterobactin (VF0228) - Nutritional/Metabolic factor (VFC0272)] [Escherichia coli CFT073]
+fimE,vfdb,(fimE) Type 1 fimbriae Regulatory protein fimE [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimA,vfdb,(fimA) Type-1 fimbrial protein A chain precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimI,vfdb,(fimI) Fimbrin-like protein fimI precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimC,vfdb,(fimC) Chaperone protein fimC precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimD,vfdb,(fimD) Outer membrane usher protein fimD precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimF,vfdb,(fimF) FimF protein precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimG,vfdb,(fimG) FimG protein precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+fimH,vfdb,(fimH) FimH protein precursor [Type 1 fimbriae (VF0221) - Adherence (VFC0001)] [Escherichia coli CFT073]
+ibeB,vfdb,(ibeB) Cu(+)/Ag(+) efflux RND transporter outer membrane channel CusC [Ibes (VF0237) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+kpsS,vfdb,(kpsS) Capsule polysaccharide export protein [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+kpsC,vfdb,(kpsC) Capsule polysaccharide export protein [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+kpsU,vfdb,(kpsU) 3-deoxy-manno-octulosonate cytidylyltransferase [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+kpsD,vfdb,(kpsD) Polysialic acid transport protein precursor [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+kpsE,vfdb,(kpsE) Capsule polysaccharide export inner-membrane protein [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+kpsF,vfdb,(kpsF) Polysialic acid capsule expression protein [K1 capsule (VF0239) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]
+ibeC,vfdb,(ibeC) phosphoethanolamine transferase CptA [Ibes (VF0237) - Invasion (VFC0083)] [Escherichia coli O45:K1:H7 str. S88]

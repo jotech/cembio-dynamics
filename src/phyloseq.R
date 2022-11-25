@@ -3,6 +3,7 @@ library(DESeq2)
 library(readxl)
 library(ggplot2)
 library(ggpubr)
+library(ape)
 
 asv.table <- fread("../dat/ASV_table.tsv")[,-1]
 sample.table <- fread("../dat/sample.sheet.tsv")
@@ -110,3 +111,15 @@ if(!is.logical(all.equal(asv.old,ps2@otu_table))){
     write.table(ps2@otu_table, "../dat/ASV_table-phyloseq.tsv", sep="\t")
 }
 
+# tree
+
+tree <- read.tree("../dat/gtdbtk.bac120.user_msa.fasta.gz_aggregated-rooted.treefile")
+tree$tip.label <- gsub("\\.",",", tree$tip.label)
+tree$tip.label[which(tree$tip.label=="MYb191,")] <- "MYb191*"
+ps2a <- subset_taxa(ps2, id!="unknown") # remove unknown group
+ps2.tree <- phyloseq(otu_table(ps2a), tax_table(ps2a), sample_data(ps2a), phy_tree(tree))
+ps2.tree.old <- readRDS("../dat/phyloseq_ps2.tree.RDS")
+if(!is.logical(all.equal(ps2.tree,ps2.tree.old))){
+    warning("phyloseq object mismatch")
+    saveRDS(ps2.tree, "../dat/phyloseq_ps2.tree.RDS")
+}

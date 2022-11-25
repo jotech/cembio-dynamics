@@ -1,0 +1,52 @@
+Type,Class,Most similar known cluster
+histidine2glutamate_hutHGIU_operon,Other,Histidine to glutamate K. pneumoniae
+Fumarate2succinate,SCFA,Fumarate to succinate B. thetaiotaomicron
+fatty_acids-unassigned,Putative,
+NADH_dehydrogenase_I,E-MGC,NADH dehydrogenase I E. coli
+TPP_AA_metabolism,Putative,
+fatty_acids-unassigned,Putative,Acetate to butyrate C. sporogenes
+TPP_fatty_acids,Putative,
+Formate_dehydrogenase,E-MGC,Formate dehydrogenase E. coli
+Fumarate2succinate,SCFA,Fumarate2succinate suc dh E. coli
+succinate2propionate,SCFA,Succinate to propionate V. parvulla
+Glycine_cleavage,Other,Glycine cleavage C. sticklandii
+acetate2butyrate,SCFA,Acetate to butyrate C. sporogenes
+Fumarate2succinate,SCFA,
+Pyruvate2acetate-formate,SCFA,Pyruvate to acetate-formate E. coli
+Rnf_complex,E-MGC,Rnf complex C. sporogenes
+"Arginine2putrescine,Arginine2_Hcarbonate",Other,Arginine to hydrogen carbonate P. aeruginosa
+Fumarate2succinate,SCFA,Fumarate2succinate fum red E. coli
+GR_AA_metabolism,Putative,Trimethylamine synthesis C. sporogenes
+Threonine2propionate,SCFA,Threonine to propionate E. coli
+"Arginine2putrescine,TPP_fatty_acids",Putative,Arginine2putrescine E. coli
+hydroxybenzoate2phenol,Aromatic,hydroxybenzoate2phenol K. pneumoniae
+Molybdopterin_dependent_oxidoreductase,E-MGC,DMSO-TMAO reducatse E. coli
+"NADH_dehydrogenase_I,Respiratory_glycerol",E-MGC,NADH dehydrogenase I E. coli
+Nitrate_reductase,E-MGC,Nitrate reductase E. coli
+OD_aldehydes_related,Putative,PFOR II pathway B. thetaiotaomicron
+"Nitrate_reductase,Formate_dehydrogenase",E-MGC,Nitrate reductase E. coli
+"Pyruvate2acetate-formate,Molybdopterin_dependent_oxidoreductase",E-MGC,DMSO-TMAO reducatse E. coli
+Putrescine2spermidine,Aliphatic_amine,
+"TPP_AA_metabolism,acetate2butyrate",SCFA,Acetate to butyrate C. sporogenes
+Arginine2putrescine,Aliphatic_amine,
+"Formate_dehydrogenase,Nitrate_reductase",E-MGC,Nitrate reductase E. coli
+"OD_aldehydes_related,PFOR_II_pathway",SCFA,PFOR II pathway B. thetaiotaomicron
+"Respiratory_glycerol,NADH_dehydrogenase_I",E-MGC,NADH dehydrogenase I E. coli
+Arginine2putrescine,Aliphatic_amine,Arginine2putrescine E. coli
+Arginine2_Hcarbonate,Other,Arginine to hydrogen carbonate P. aeruginosa
+"Molybdopterin_dependent_oxidoreductase,Pyruvate2acetate-formate",SCFA,DMSO-TMAO reducatse E. coli
+Flavoenzyme_lipids_catabolism,Putative,
+Flavoenzyme_lipids_catabolism,Putative,bai operon C. scindens VPI
+Putrescine2spermidine,Aliphatic_amine,Putrescine2spermidine E. rectale
+"Fumarate2succinate,fatty_acids-unassigned",Putative,Fumarate2succinate suc dh E. coli
+TPP_fatty_acids,Putative,Acetate to butyrate C. sporogenes
+"Arginine2_Hcarbonate,Glycine_cleavage",Other,Arginine to hydrogen carbonate P. aeruginosa
+"Flavoenzyme_AA_peptides_catabolism,Flavoenzyme_lipids_catabolism",Putative,
+EUT_pathway,SCFA-other,Ethanolamine degradation S. typhimurium
+Respiratory_glycerol,E-MGC,GlycerolP to glyceroneP E. coli
+"OD_eut_pdu_related,OD_lactate_related,OD_aldehydes_related,PFOR_II_pathway",SCFA,PFOR II pathway B. thetaiotaomicron
+"Flavoenzyme_lipids_catabolism,TPP_fatty_acids",Putative,Acetate to butyrate C. sporogenes
+"TPP_fatty_acids,TPP_AA_metabolism",Putative,
+"OD_aldehydes_related,OD_eut_pdu_related,OD_lactate_related",Putative,
+caffeate_respiration,Aromatic,Caffeate respiration C. sp. SY8519
+Putrescine2spermidine,Aliphatic_amine,Arginine2putrescine R. gnavus
