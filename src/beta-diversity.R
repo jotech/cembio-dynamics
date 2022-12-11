@@ -5,19 +5,23 @@ library(ggpubr)
 library(foreach)
 library(doParallel)
 library(vegan)
+library(microViz)
 
 ps2.tree <- readRDS("../dat/phyloseq_ps2.tree.RDS")
 ps2.tree.sync <- subset_samples(ps2.tree, !time %in% c(0,2)) # sync time
 ps2rel.tree.sync <- transform_sample_counts(ps2.tree.sync, function(x){x / sum(x)})
 cores <- 2
-dist.bray    = phyloseq::distance(ps2rel.tree.sync, method="bray")
-
+dist.bray      <- phyloseq::distance(ps2rel.tree.sync, method="bray")
+dist.aitchison <- microViz::dist_calc(ps2rel.tree.sync, dist="aitchison")@dist
 
 # Ordination plots
-ord.mds.bray <- ordinate(ps2rel.tree.sync, "MDS", "bray")
-
+ord.mds.bray <- ordinate(ps2rel.tree.sync, method="PCoA", distance=dist.bray)
 plot_ordination(ps2rel.tree.sync, ord.mds.bray, type="samples", color="time") + geom_point(size=3, shape=21, color="black", aes(fill=time)) + facet_wrap(~source) + scale_fill_brewer(type="qual", palette="Oranges") + theme_bw(base_size=14)
-#ggsave("../img/ordination-mds_bray.pdf", width=8, height=2.5)
+#ggsave("../img/ordination-pcoa_bray.pdf", width=8, height=2.5)
+
+ord.mds.aitchison <- ordinate(ps2rel.tree.sync, method="PCoA", distance=dist.aitchison)
+plot_ordination(ps2rel.tree.sync, ord.mds.aitchison, type="samples", color="time") + geom_point(size=3, shape=21, color="black", aes(fill=time)) + facet_wrap(~source) + scale_fill_brewer(type="qual", palette="Oranges") + theme_bw(base_size=14)
+#ggsave("../img/ordination-pcoa_aitchison.pdf", width=8, height=2.5)
 
 
 # PERMANOVA
@@ -25,13 +29,19 @@ plot_ordination(ps2rel.tree.sync, ord.mds.bray, type="samples", color="time") + 
 anova(vegan::betadisper(dist.bray, sample_data(ps2rel.tree.sync)$source)) 
 adonis2(dist.bray ~ sample_data(ps2rel.tree.sync)$source)
 
+anova(vegan::betadisper(dist.aitchison, sample_data(ps2rel.tree.sync)$source)) 
+adonis2(dist.aitchison ~ sample_data(ps2rel.tree.sync)$source)
+
 permanova.src.dt <- data.table()
 for(src in levels(ps2.tree.sync@sam_data$source)){
     ps2.tmp <- subset_samples(ps2rel.tree.sync, source==src)
     bray.tmp    <- phyloseq::distance(ps2.tmp, method="bray")
     disp.test1 <- anova(vegan::betadisper(bray.tmp, sample_data(ps2.tmp)$time))
     permanova1 <- adonis2(bray.tmp ~ sample_data(ps2.tmp)$time)
-    permanova.src.dt <- rbind(permanova.src.dt, data.table(src, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1]))
+    aitchison.tmp <- microViz::dist_calc(ps2.tmp, dist="aitchison")@dist
+    disp.test2 <- anova(vegan::betadisper(aitchison.tmp, sample_data(ps2.tmp)$time))
+    permanova2 <- adonis2(aitchison.tmp ~ sample_data(ps2.tmp)$time)
+    permanova.src.dt <- rbind(permanova.src.dt, data.table(src, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1], dispersion.aitchison=disp.test2$`Pr(>F)`[1], permanova.aitchison=permanova2$`Pr(>F)`[1]))
 }
 
 permanova.time.dt <- data.table()
@@ -40,7 +50,10 @@ for(ti in levels(ps2.tree.sync@sam_data$time)){
     bray.tmp    <- phyloseq::distance(ps2.tmp, method="bray")
     disp.test1 <- anova(vegan::betadisper(bray.tmp, sample_data(ps2.tmp)$source))
     permanova1 <- adonis2(bray.tmp ~ sample_data(ps2.tmp)$source)
-    permanova.time.dt <- rbind(permanova.time.dt, data.table(time=ti, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1]))
+    aitchison.tmp    <- microViz::dist_calc(ps2.tmp, dist="aitchison")@dist
+    disp.test2 <- anova(vegan::betadisper(aitchison.tmp, sample_data(ps2.tmp)$source))
+    permanova2 <- adonis2(aitchison.tmp ~ sample_data(ps2.tmp)$source)
+    permanova.time.dt <- rbind(permanova.time.dt, data.table(time=ti, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1], dispersion.aitchison=disp.test2$`Pr(>F)`[1], permanova.aitchison=permanova2$`Pr(>F)`[1]))
 }
 
 
