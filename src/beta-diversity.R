@@ -72,11 +72,20 @@ dist_melt <- function(mydist){
 	return(dist.melt)
 }
 dist.bray.melt <- dist_melt(dist.bray)
+dist.aitchison.melt <- dist_melt(dist.aitchison)
 
 dist.bray.source.time <-dist.bray.melt[time1==time2 & source1==source2]
-ggplot(dist.bray.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (bray)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+ggplot(dist.bray.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (bray)") + geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = -Inf, label=paste("PERMANOVA, p =",permanova.bray)), hjust=-0.1, vjust=-1) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_bray.pdf", width=8, height=2.5)
 
+dist.aitchison.source.time <-dist.aitchison.melt[time1==time2 & source1==source2]
+ggplot(dist.aitchison.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (aitchison)") + 
+    #stat_compare_means(method="anova", label.x.npc="center") + 
+    geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = -Inf, label=paste("PERMANOVA, p =",permanova.aitchison)), hjust=-0.1, vjust=-1) +
+    scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+#ggsave("../img/beta-diversity_aitchison.pdf", width=8, height=2.5)
+
+adonis2(dist ~ source1, data=dist.aitchison.source.time)
 
 
 # Comparison pairs
@@ -84,6 +93,10 @@ ggplot(dist.bray.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wra
 dist.bray.pairs <- dist.bray.melt[code1==code2]
 dist.bray.asso.alone <- dist.bray.melt[time1==time2 & ((source1=="associated" & source2=="alone") | (source1=="alone" & source2=="associated"))]
 dist.bray.host.alone <- dist.bray.melt[time1==time2 & ((source1=="host" & source2=="alone") | (source1=="alone" & source2=="host"))]
+
+dist.aitchison.pairs <- dist.aitchison.melt[code1==code2]
+dist.aitchison.asso.alone <- dist.aitchison.melt[time1==time2 & ((source1=="associated" & source2=="alone") | (source1=="alone" & source2=="associated"))]
+dist.aitchison.host.alone <- dist.aitchison.melt[time1==time2 & ((source1=="host" & source2=="alone") | (source1=="alone" & source2=="host"))]
 #
 
 registerDoParallel(cores)
@@ -107,7 +120,9 @@ rand_asso <- function(dist.pairs, dist.asso.alone, dist.host.alone){
 	return(rand.lst)
 }
 bray.rand.lst <- rand_asso(dist.bray.pairs, dist.bray.asso.alone, dist.bray.host.alone)
+aitchison.rand.lst <- rand_asso(dist.aitchison.pairs, dist.aitchison.asso.alone, dist.aitchison.host.alone)
 #saveRDS(bray.rand.lst, "../dat/beta-div_bray.rand-asso.RDS")
+#saveRDS(aitchison.rand.lst, "../dat/beta-div_aitchison.rand-asso.RDS")
 
 #bray.rand.lst <- readRDS("../dat/beta-div_bray.rand-asso.RDS")
 bray.rand.asso.stat.dt <- bray.rand.lst[[1]]; bray.rand.asso.dt <- bray.rand.lst[[2]]
@@ -116,3 +131,9 @@ bray.rand.asso.stat.melt[, cmp:=str_remove(variable, "^dist\\.")]
 ggplot(bray.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (bray)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_bray-pairs.pdf", width=8, height=2.5)
 
+#aitchison.rand.lst <- readRDS("../dat/beta-div_aitchison.rand-asso.RDS")
+aitchison.rand.asso.stat.dt <- aitchison.rand.lst[[1]]; aitchison.rand.asso.dt <- aitchison.rand.lst[[2]]
+aitchison.rand.asso.stat.melt <- melt(aitchison.rand.asso.dt[,lapply(.SD,mean),by=.(pair,time),.SDcols=!grep("run",colnames(aitchison.rand.asso.dt))], id.vars=c("pair","time"))
+aitchison.rand.asso.stat.melt[, cmp:=str_remove(variable, "^dist\\.")]
+ggplot(aitchison.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (aitchison)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+#ggsave("../img/beta-diversity_aitchison-pairs.pdf", width=8, height=2.5)
