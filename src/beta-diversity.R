@@ -73,16 +73,14 @@ dist_melt <- function(mydist){
 }
 dist.bray.melt <- dist_melt(dist.bray)
 dist.aitchison.melt <- dist_melt(dist.aitchison)
+permanova.src.dt[,source1:=src] # dummy column for facet plotting
 
 dist.bray.source.time <-dist.bray.melt[time1==time2 & source1==source2]
-ggplot(dist.bray.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (bray)") + geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = -Inf, label=paste("PERMANOVA, p =",permanova.bray)), hjust=-0.1, vjust=-1) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+ggplot(dist.bray.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (bray)") + geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.bray)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_bray.pdf", width=8, height=2.5)
 
 dist.aitchison.source.time <-dist.aitchison.melt[time1==time2 & source1==source2]
-ggplot(dist.aitchison.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (aitchison)") + 
-    #stat_compare_means(method="anova", label.x.npc="center") + 
-    geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = -Inf, label=paste("PERMANOVA, p =",permanova.aitchison)), hjust=-0.1, vjust=-1) +
-    scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+ggplot(dist.aitchison.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (aitchison)") + geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.aitchison)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_aitchison.pdf", width=8, height=2.5)
 
 adonis2(dist ~ source1, data=dist.aitchison.source.time)
@@ -128,12 +126,26 @@ aitchison.rand.lst <- rand_asso(dist.aitchison.pairs, dist.aitchison.asso.alone,
 bray.rand.asso.stat.dt <- bray.rand.lst[[1]]; bray.rand.asso.dt <- bray.rand.lst[[2]]
 bray.rand.asso.stat.melt <- melt(bray.rand.asso.dt[,lapply(.SD,mean),by=.(pair,time),.SDcols=!grep("run",colnames(bray.rand.asso.dt))], id.vars=c("pair","time"))
 bray.rand.asso.stat.melt[, cmp:=str_remove(variable, "^dist\\.")]
-ggplot(bray.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (bray)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+permanova.bray.rand.asso.dt <- data.table()
+for(comp in unique(bray.rand.asso.stat.melt$cmp)){
+    bray.tmp <- bray.rand.asso.stat.melt[cmp==comp]
+    #disp.test1 <- anova(vegan::betadisper(bray.tmp$value, bray.tmp$time))
+    permanova1 <- adonis2(bray.tmp$value ~ bray.tmp$time)
+    permanova.bray.rand.asso.dt <- rbind(permanova.bray.rand.asso.dt, data.table(cmp=comp, permanova.bray=permanova1$`Pr(>F)`[1]))
+}
+ggplot(bray.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (bray)") + geom_text(data=permanova.bray.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.bray)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_bray-pairs.pdf", width=8, height=2.5)
 
 #aitchison.rand.lst <- readRDS("../dat/beta-div_aitchison.rand-asso.RDS")
 aitchison.rand.asso.stat.dt <- aitchison.rand.lst[[1]]; aitchison.rand.asso.dt <- aitchison.rand.lst[[2]]
 aitchison.rand.asso.stat.melt <- melt(aitchison.rand.asso.dt[,lapply(.SD,mean),by=.(pair,time),.SDcols=!grep("run",colnames(aitchison.rand.asso.dt))], id.vars=c("pair","time"))
 aitchison.rand.asso.stat.melt[, cmp:=str_remove(variable, "^dist\\.")]
-ggplot(aitchison.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (aitchison)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+permanova.aitchison.rand.asso.dt <- data.table()
+for(comp in unique(aitchison.rand.asso.stat.melt$cmp)){
+    aitchison.tmp <- aitchison.rand.asso.stat.melt[cmp==comp]
+    #disp.test1 <- anova(vegan::betadisper(aitchison.tmp$value, aitchison.tmp$time))
+    permanova1 <- adonis2(aitchison.tmp$value ~ aitchison.tmp$time)
+    permanova.aitchison.rand.asso.dt <- rbind(permanova.aitchison.rand.asso.dt, data.table(cmp=comp, permanova.aitchison=permanova1$`Pr(>F)`[1]))
+}
+ggplot(aitchison.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (aitchison)") + geom_text(data=permanova.aitchison.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.aitchison)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_aitchison-pairs.pdf", width=8, height=2.5)
