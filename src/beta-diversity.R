@@ -13,6 +13,7 @@ ps2rel.tree.sync <- transform_sample_counts(ps2.tree.sync, function(x){x / sum(x
 cores <- 2
 dist.bray      <- phyloseq::distance(ps2rel.tree.sync, method="bray")
 dist.aitchison <- microViz::dist_calc(ps2rel.tree.sync, dist="aitchison")@dist
+dist.unifrac   <- microViz::dist_calc(ps2rel.tree.sync, dist="wunifrac")@dist
 
 # Ordination plots
 ord.mds.bray <- ordinate(ps2rel.tree.sync, method="PCoA", distance=dist.bray)
@@ -23,25 +24,35 @@ ord.mds.aitchison <- ordinate(ps2rel.tree.sync, method="PCoA", distance=dist.ait
 plot_ordination(ps2rel.tree.sync, ord.mds.aitchison, type="samples", color="time") + geom_point(size=3, shape=21, color="black", aes(fill=time)) + facet_wrap(~source) + scale_fill_brewer(type="qual", palette="Oranges") + theme_bw(base_size=14)
 #ggsave("../img/ordination-pcoa_aitchison.pdf", width=8, height=2.5)
 
+ord.mds.unifrac <- ordinate(ps2rel.tree.sync, method="PCoA", distance=dist.unifrac)
+plot_ordination(ps2rel.tree.sync, ord.mds.unifrac, type="samples", color="time") + geom_point(size=3, shape=21, color="black", aes(fill=time)) + facet_wrap(~source) + scale_fill_brewer(type="qual", palette="Oranges") + theme_bw(base_size=14)
+#ggsave("../img/ordination-pcoa_unifrac.pdf", width=8, height=2.5)
+
 
 # PERMANOVA
 
 anova(vegan::betadisper(dist.bray, sample_data(ps2rel.tree.sync)$source)) 
-adonis2(dist.bray ~ sample_data(ps2rel.tree.sync)$source)
+adonis2(dist.bray ~ sample_data(ps2rel.tree.sync)$source, permutations=10000)
 
 anova(vegan::betadisper(dist.aitchison, sample_data(ps2rel.tree.sync)$source)) 
-adonis2(dist.aitchison ~ sample_data(ps2rel.tree.sync)$source)
+adonis2(dist.aitchison ~ sample_data(ps2rel.tree.sync)$source, permutations=10000)
+
+anova(vegan::betadisper(dist.unifrac, sample_data(ps2rel.tree.sync)$source)) 
+adonis2(dist.unifrac ~ sample_data(ps2rel.tree.sync)$source, permutations=10000)
 
 permanova.src.dt <- data.table()
 for(src in levels(ps2.tree.sync@sam_data$source)){
     ps2.tmp <- subset_samples(ps2rel.tree.sync, source==src)
     bray.tmp    <- phyloseq::distance(ps2.tmp, method="bray")
     disp.test1 <- anova(vegan::betadisper(bray.tmp, sample_data(ps2.tmp)$time))
-    permanova1 <- adonis2(bray.tmp ~ sample_data(ps2.tmp)$time)
+    permanova1 <- adonis2(bray.tmp ~ sample_data(ps2.tmp)$time, permutations=10000)
     aitchison.tmp <- microViz::dist_calc(ps2.tmp, dist="aitchison")@dist
     disp.test2 <- anova(vegan::betadisper(aitchison.tmp, sample_data(ps2.tmp)$time))
-    permanova2 <- adonis2(aitchison.tmp ~ sample_data(ps2.tmp)$time)
-    permanova.src.dt <- rbind(permanova.src.dt, data.table(src, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1], dispersion.aitchison=disp.test2$`Pr(>F)`[1], permanova.aitchison=permanova2$`Pr(>F)`[1]))
+    permanova2 <- adonis2(aitchison.tmp ~ sample_data(ps2.tmp)$time, permutations=10000)
+    unifrac.tmp <- microViz::dist_calc(ps2.tmp, dist="wunifrac")@dist
+    disp.test3 <- anova(vegan::betadisper(unifrac.tmp, sample_data(ps2.tmp)$time))
+    permanova3 <- adonis2(unifrac.tmp ~ sample_data(ps2.tmp)$time, permutations=10000)
+    permanova.src.dt <- rbind(permanova.src.dt, data.table(src, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1], dispersion.aitchison=disp.test2$`Pr(>F)`[1], permanova.aitchison=permanova2$`Pr(>F)`[1], dispersion.unifrac=disp.test3$`Pr(>F)`[1], permanova.unifrac=permanova3$`Pr(>F)`[1]))
 }
 
 permanova.time.dt <- data.table()
@@ -49,11 +60,14 @@ for(ti in levels(ps2.tree.sync@sam_data$time)){
     ps2.tmp <- subset_samples(ps2rel.tree.sync, time==ti)
     bray.tmp    <- phyloseq::distance(ps2.tmp, method="bray")
     disp.test1 <- anova(vegan::betadisper(bray.tmp, sample_data(ps2.tmp)$source))
-    permanova1 <- adonis2(bray.tmp ~ sample_data(ps2.tmp)$source)
+    permanova1 <- adonis2(bray.tmp ~ sample_data(ps2.tmp)$source, permutations=10000)
     aitchison.tmp    <- microViz::dist_calc(ps2.tmp, dist="aitchison")@dist
     disp.test2 <- anova(vegan::betadisper(aitchison.tmp, sample_data(ps2.tmp)$source))
-    permanova2 <- adonis2(aitchison.tmp ~ sample_data(ps2.tmp)$source)
-    permanova.time.dt <- rbind(permanova.time.dt, data.table(time=ti, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1], dispersion.aitchison=disp.test2$`Pr(>F)`[1], permanova.aitchison=permanova2$`Pr(>F)`[1]))
+    permanova2 <- adonis2(aitchison.tmp ~ sample_data(ps2.tmp)$source, permutations=10000)
+    unifrac.tmp    <- microViz::dist_calc(ps2.tmp, dist="wunifrac")@dist
+    disp.test3 <- anova(vegan::betadisper(unifrac.tmp, sample_data(ps2.tmp)$source))
+    permanova3 <- adonis2(unifrac.tmp ~ sample_data(ps2.tmp)$source, permutations=10000)
+    permanova.time.dt <- rbind(permanova.time.dt, data.table(time=ti, dispersion.bray=disp.test1$`Pr(>F)`[1], permanova.bray=permanova1$`Pr(>F)`[1], dispersion.aitchison=disp.test2$`Pr(>F)`[1], permanova.aitchison=permanova2$`Pr(>F)`[1], dispersion.unifrac=disp.test3$`Pr(>F)`[1], permanova.unifrac=permanova3$`Pr(>F)`[1]))
 }
 
 
@@ -73,6 +87,7 @@ dist_melt <- function(mydist){
 }
 dist.bray.melt <- dist_melt(dist.bray)
 dist.aitchison.melt <- dist_melt(dist.aitchison)
+dist.unifrac.melt <- dist_melt(dist.unifrac)
 permanova.src.dt[,source1:=src] # dummy column for facet plotting
 
 dist.bray.source.time <-dist.bray.melt[time1==time2 & source1==source2]
@@ -83,8 +98,9 @@ dist.aitchison.source.time <-dist.aitchison.melt[time1==time2 & source1==source2
 ggplot(dist.aitchison.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (aitchison)") + geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.aitchison)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_aitchison.pdf", width=8, height=2.5)
 
-adonis2(dist ~ source1, data=dist.aitchison.source.time)
-
+dist.unifrac.source.time <-dist.unifrac.melt[time1==time2 & source1==source2]
+ggplot(dist.unifrac.source.time, aes(x=time1, y=dist)) + geom_boxplot() + facet_wrap(~source1) + theme_bw(base_size=14) + xlab("Time [h]") + ylab("Beta-diversity (unifrac)") + geom_text(data=permanova.src.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.unifrac)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+#ggsave("../img/beta-diversity_unifrac.pdf", width=8, height=2.5)
 
 # Comparison pairs
 
@@ -95,6 +111,10 @@ dist.bray.host.alone <- dist.bray.melt[time1==time2 & ((source1=="host" & source
 dist.aitchison.pairs <- dist.aitchison.melt[code1==code2]
 dist.aitchison.asso.alone <- dist.aitchison.melt[time1==time2 & ((source1=="associated" & source2=="alone") | (source1=="alone" & source2=="associated"))]
 dist.aitchison.host.alone <- dist.aitchison.melt[time1==time2 & ((source1=="host" & source2=="alone") | (source1=="alone" & source2=="host"))]
+
+dist.unifrac.pairs <- dist.unifrac.melt[code1==code2]
+dist.unifrac.asso.alone <- dist.unifrac.melt[time1==time2 & ((source1=="associated" & source2=="alone") | (source1=="alone" & source2=="associated"))]
+dist.unifrac.host.alone <- dist.unifrac.melt[time1==time2 & ((source1=="host" & source2=="alone") | (source1=="alone" & source2=="host"))]
 #
 
 registerDoParallel(cores)
@@ -119,8 +139,10 @@ rand_asso <- function(dist.pairs, dist.asso.alone, dist.host.alone){
 }
 bray.rand.lst <- rand_asso(dist.bray.pairs, dist.bray.asso.alone, dist.bray.host.alone)
 aitchison.rand.lst <- rand_asso(dist.aitchison.pairs, dist.aitchison.asso.alone, dist.aitchison.host.alone)
+unifrac.rand.lst <- rand_asso(dist.unifrac.pairs, dist.unifrac.asso.alone, dist.unifrac.host.alone)
 #saveRDS(bray.rand.lst, "../dat/beta-div_bray.rand-asso.RDS")
 #saveRDS(aitchison.rand.lst, "../dat/beta-div_aitchison.rand-asso.RDS")
+#saveRDS(unifrac.rand.lst, "../dat/beta-div_unifrac.rand-asso.RDS")
 
 #bray.rand.lst <- readRDS("../dat/beta-div_bray.rand-asso.RDS")
 bray.rand.asso.stat.dt <- bray.rand.lst[[1]]; bray.rand.asso.dt <- bray.rand.lst[[2]]
@@ -149,3 +171,17 @@ for(comp in unique(aitchison.rand.asso.stat.melt$cmp)){
 }
 ggplot(aitchison.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (aitchison)") + geom_text(data=permanova.aitchison.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.aitchison)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_aitchison-pairs.pdf", width=8, height=2.5)
+
+#unifrac.rand.lst <- readRDS("../dat/beta-div_unifrac.rand-asso.RDS")
+unifrac.rand.asso.stat.dt <- unifrac.rand.lst[[1]]; unifrac.rand.asso.dt <- unifrac.rand.lst[[2]]
+unifrac.rand.asso.stat.melt <- melt(unifrac.rand.asso.dt[,lapply(.SD,mean),by=.(pair,time),.SDcols=!grep("run",colnames(unifrac.rand.asso.dt))], id.vars=c("pair","time"))
+unifrac.rand.asso.stat.melt[, cmp:=str_remove(variable, "^dist\\.")]
+permanova.unifrac.rand.asso.dt <- data.table()
+for(comp in unique(unifrac.rand.asso.stat.melt$cmp)){
+    unifrac.tmp <- unifrac.rand.asso.stat.melt[cmp==comp]
+    #disp.test1 <- anova(vegan::betadisper(unifrac.tmp$value, unifrac.tmp$time))
+    permanova1 <- adonis2(unifrac.tmp$value ~ unifrac.tmp$time)
+    permanova.unifrac.rand.asso.dt <- rbind(permanova.unifrac.rand.asso.dt, data.table(cmp=comp, permanova.unifrac=permanova1$`Pr(>F)`[1]))
+}
+ggplot(unifrac.rand.asso.stat.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (unifrac)") + geom_text(data=permanova.unifrac.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",permanova.unifrac)), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+#ggsave("../img/beta-diversity_unifrac-pairs.pdf", width=8, height=2.5)
