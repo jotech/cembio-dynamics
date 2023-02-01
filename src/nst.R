@@ -3,13 +3,16 @@ library(phyloseq)
 library(ggpubr)
 library(foreach)
 library(doParallel)
+library(iCAMP)
 
 cores <- 3
 rand.time <- 1000
 
-ps2 <- readRDS("../dat/phyloseq_ps2.RDS")
-ps2 <- subset_taxa(ps2, id!="unknown")
+ps2 <- readRDS("../dat/phyloseq_ps2.tree.RDS")
 ps2 <- subset_samples(ps2, !time %in% c(0,2)) # sync time
+#ps2 <- subset_taxa(ps2, id!="unknown")
+levels(ps2@sam_data$source) <- c("control", "substrate", "host") # rename sample sources
+ps2 <- transform_sample_counts(ps2, function(x){x / sum(x)})
 
 comm <- data.frame(t(otu_table(ps2)))
 treat <- data.frame(sample_data(ps2))[,c("time","source"), drop=F]
@@ -25,13 +28,15 @@ tnst=NST::tNST(comm=comm, group=treat.use, rand=rand.time, nworker=cores, output
 tnst$index.grp
 tnst.bt=NST::nst.boot(nst.result=tnst, rand=rand.time, nworker=cores, out.detail=TRUE, between.group=TRUE)
 data.table(tnst.bt$compare)[Index=="NST",.(Index,group1,group2,group1.obs,group2.obs,p.count)]
-#save(pnst, pnst.bt, tnst, tnst.bt, file="../dat/NST.RData", compress="xz")
-
+#save(tnst, tnst.bt, file="../dat/NST.RData", compress="xz")
+#load("../dat/NST.RData")
 tnst.bt$summary[,1:8]
-tnst.dt <- tnst.bt$summary[tnst.bt$summary$Index=="NST" & tnst.bt$summary$Group %in% c("host", "associated", "alone"),c("Group","mean","stdev")]
+tnst.dt <- tnst.bt$summary[tnst.bt$summary$Index=="NST" & tnst.bt$summary$Group %in% c("host", "substrate", "control"),c("Group","mean","stdev")]
 stat.dt <- tnst.bt$compare[tnst.bt$compare$Index=="NST" ,c("group1","group2","p.count")]
-stat.dt$y.position <- c(.72,.67,.62)
+#stat.dt$y.position <- c(.72,.67,.62)
+stat.dt$y.position <- c(.42,.37,.42)
 stat.dt$p.value <- round(as.numeric(stat.dt$p.count),3); stat.dt$p.signif <- ifelse(stat.dt$p.value>=0.05, "ns", "*")
+tnst.dt$Group <- factor(tnst.dt$Group, levels=c("control","substrate","host"))
 ggplot(tnst.dt) + geom_point(aes(x=Group, y=mean), size=1.5) + geom_errorbar(aes(x=Group, ymin=ifelse(mean-stdev<0,0,mean-stdev), ymax=mean+stdev),width=0.2) + theme_bw(base_size=14) + stat_pvalue_manual(stat.dt, label = "p.signif", hide.ns=T) + scale_y_continuous(expand = expansion(mult = c(0, 0.1))) + xlab("") + ylab("Stochasticity [tNST]") + geom_hline(yintercept=0.5, linetype="dashed", color = "red")
 ggsave("../img/nst-tnst.pdf", width=3, height=2.5)
 
@@ -41,7 +46,7 @@ ggsave("../img/nst-tnst.pdf", width=3, height=2.5)
 #
 nst.s.boot.dt <- data.table()
 nst.s.pval.dt <- data.table()
-for(i in c("host", "associated", "alone")){
+for(i in c("host", "substrate", "control")){
 	ps2.s   <- subset_samples(ps2, source==i & time %in% c(16, 42, 66, 90, 138, 186))
 	comm.s  <- data.frame(t(otu_table(ps2.s)))
     treat.s <- data.frame(sample_data(ps2.s))[,c("time"), drop=F]; treat.s$time <- as.numeric(as.character(treat.s$time))
@@ -51,15 +56,20 @@ for(i in c("host", "associated", "alone")){
     nst.s.boot.dt <- rbind(nst.s.boot.dt, data.table(source=i, algo="tnst", tnst.s.boot$summary[,1:8]))
     nst.s.pval.dt <- rbind(nst.s.pval.dt, data.table(source=i, algo="tnst", tnst.s.boot$compare))
 }
-#save(nst.s.boot.dt,nst.s.pval.dt, file="~/uni/cembio.ext/dat/NST_time.RData")
-#load("~/uni/cembio.ext/dat/NST_time.RData")
+#save(nst.s.boot.dt,nst.s.pval.dt, file="../dat/NST_source.RData")
+#load("../dat/NST_source.RData")
 stat.dt <- nst.s.pval.dt[Index=="NST" ,c("source","algo","group1","group2","p.count")]
 stat.dt[,group1:=factor(group1)]; stat.dt[,group2:=factor(group2)]
 stat.dt$p.value <- round(as.numeric(stat.dt$p.count),3); stat.dt$p.signif <- ifelse(stat.dt$p.value>=0.05, "ns", "*")
 stat.dt <- stat.dt[p.signif!="ns"]
+stat.dt <- stat.dt[,cmp:=ifelse(as.numeric(group1)<as.numeric(group2),paste(group1,group2,sep=","),paste(group2,group1,sep=","))]
+stat.dt <- stat.dt[cmp %in% c("16,42","42,66","66,90","90,138","138,186")]
 y.pos.N <- max(stat.dt[,.N,by=.(source,algo)]$N)
-stat.dt[algo=="tnst", y.position:=rep(seq(1,1.5,by=0.5/y.pos.N),3)[1:.N]]
-ggplot(nst.s.boot.dt[algo=="tnst" & Index=="NST"]) + geom_point(aes(x=factor(as.numeric(Group)), y=mean), size=1.5) + geom_line(aes(x=factor(as.numeric(Group)), y=mean, group=source)) + geom_errorbar(aes(x=factor(as.numeric(Group)), ymin=ifelse(mean-stdev<0,0,mean-stdev), ymax=mean+stdev), alpha=0.5, width=0.2) + stat_pvalue_manual(stat.dt[algo=="tnst"], label = "p.signif", hide.ns=T) + scale_y_continuous(expand = expansion(mult = c(0, 0.1))) + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Stochasticity [tNST]") + xlab("Time [h]") + geom_hline(yintercept=0.5, linetype="dashed", color = "red")
+stat.dt[algo=="tnst", y.position:=rep(seq(0.6,0.7,by=0.5/y.pos.N),3)[1:.N]]
+nst.s.boot.dt[,source:=factor(source, levels=c("control","substrate","host"))]
+stat.dt[,source:=factor(source, levels=c("control","substrate","host"))]
+ggplot(nst.s.boot.dt[algo=="tnst" & Index=="NST"], group=source) + geom_point(aes(x=factor(as.numeric(Group)), y=mean), size=1.5) + geom_line(aes(x=factor(as.numeric(Group)), y=mean, group=source)) + geom_errorbar(aes(x=factor(as.numeric(Group)), ymin=ifelse(mean-stdev<0,0,mean-stdev), ymax=mean+stdev), alpha=0.5, width=0.2) + stat_pvalue_manual(stat.dt[algo=="tnst"], label = "p.signif", hide.ns=T) + scale_y_continuous(expand = expansion(mult = c(0, 0.1))) + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Stochasticity [tNST]") + xlab("Time [h]") + geom_hline(yintercept=0.5, linetype="dashed", color = "red")
+g + stat_pvalue_manual(stat.dt[algo=="tnst"], label = "p.signif", hide.ns=T)
 ggsave("../img/nst-tnst_source.pdf", width=9, height=2.5)
 
 
@@ -78,12 +88,14 @@ for(i in c(16, 42, 66, 90, 138, 186)){
     nst.t.boot.dt <- rbind(nst.t.boot.dt, data.table(t=i, algo="tnst", tnst.t.boot$summary[,1:8]))
     nst.t.pval.dt <- rbind(nst.t.pval.dt, data.table(t=i, algo="tnst", tnst.t.boot$compare))
 }
-#save(nst.t.boot.dt,nst.t.pval.dt, file="~/uni/cembio.ext/dat/NST_source.RData", compress="xz")
+#save(nst.t.boot.dt,nst.t.pval.dt, file="../dat/NST_time.RData", compress="xz")
+#load("../dat/NST_time.RData")
 stat.dt <- nst.t.pval.dt[Index=="NST" ,c("t","algo","group1","group2","p.count")]
 stat.dt$p.value <- round(as.numeric(stat.dt$p.count),3); stat.dt$p.signif <- ifelse(stat.dt$p.value>=0.05, "ns", "*")
 stat.dt <- stat.dt[p.signif!="ns"]
-stat.dt[algo=="tnst", y.position:=c(1,1.1,1.2)[1:.N]]
+stat.dt[algo=="tnst", y.position:=c(0.6,0.7,0.8)[1:.N]]
 stat.dt[,time:=factor(t)]; nst.t.boot.dt[,time:=factor(t)]
+nst.t.boot.dt[,Group:=factor(Group, levels=c("control","substrate","host"))]
 ggplot(nst.t.boot.dt[algo=="tnst" & Index=="NST"]) + geom_point(aes(x=Group, y=mean), size=1.5) + geom_errorbar(aes(x=Group, ymin=ifelse(mean-stdev<0,0,mean-stdev), ymax=ifelse(mean+stdev>1,1,mean+stdev)), width=0.2) + stat_pvalue_manual(stat.dt[algo=="tnst"], label = "p.signif", hide.ns=T) + scale_y_continuous(expand = expansion(mult = c(0, 0.1))) + facet_wrap(~time, labeller=label_both) + theme_bw(base_size=14) + ylab("Stochasticity [tNST]") + geom_hline(yintercept=0.5, linetype="dashed", color = "red")+ xlab("")
 ggsave("../img/nst-tnst_time.pdf", width=7, height=5)
 

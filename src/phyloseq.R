@@ -106,9 +106,16 @@ if(!is.logical(all.equal(ps2,ps2.old))){
 }
 
 asv.old <- read.table("../dat/ASV_table-phyloseq.tsv")
-if(!is.logical(all.equal(asv.old,ps2@otu_table))){
+if(!is.logical(all.equal(asv.old,as.data.frame(ps2@otu_table)))){
     warning("filtered ASV table mismatch")
     write.table(ps2@otu_table, "../dat/ASV_table-phyloseq.tsv", sep="\t")
+}
+
+ps2.rel <- transform_sample_counts(ps2, function(x){x / sum(x)})
+asv.rel.old <- read.table("../dat/ASVrel_table-phyloseq.tsv")
+if(!is.logical(all.equal(asv.rel.old,as.data.frame(ps2.rel@otu_table)))){
+    warning("filtered relative ASV table mismatch")
+    write.table(ps2.rel@otu_table, "../dat/ASVrel_table-phyloseq.tsv", sep="\t")
 }
 
 # tree

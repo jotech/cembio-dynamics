@@ -5,6 +5,7 @@ library(ggpubr)
 
 ps2 <- readRDS("../dat/phyloseq_ps2.RDS")
 ps2.sync <- subset_samples(ps2, !time %in% c(0,2)) # sync time
+levels(ps2.sync@sam_data$source) <- c("control", "substrate", "host") # rename sample sources
 
 
 plot_richness(ps2.sync, x="time", measures=c("Shannon")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Alpha diversity (Shannon)")  + stat_compare_means(method="anova", label.x.npc="center") + stat_cor(method="spearman") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1))) + geom_smooth()
