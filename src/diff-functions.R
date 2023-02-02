@@ -3,10 +3,11 @@ library(phyloseq)
 library(ggplot2)
 
 ps2 <- readRDS("../dat/phyloseq_ps2.RDS")
+levels(ps2@sam_data$source) <- c("control", "substrate", "host") # rename sample sources
 
-ps2.asso.worm  <- subset_samples(ps2, source %in% c("host","associated"))
-ps2.alone.asso <- subset_samples(ps2, source %in% c("alone","associated") & !time %in% c(0, 2)) # 2 more time points in cembio.alone
-ps2.alone.worm <- subset_samples(ps2, source %in% c("alone","host") & !time %in% c(0, 2)) # 2 more time points in cembio.alone
+ps2.asso.worm  <- subset_samples(ps2, source %in% c("host","substrate"))
+ps2.alone.asso <- subset_samples(ps2, source %in% c("control","substrate") & !time %in% c(0, 2)) # 2 more time points in cembio.alone
+ps2.alone.worm <- subset_samples(ps2, source %in% c("control","host") & !time %in% c(0, 2)) # 2 more time points in cembio.alone
 
 
 meta.pwy <- fread("../dat/meta_pwy.tbl")
@@ -70,11 +71,26 @@ ps2.alone.worm.feat.dds <- ddseq2_analysis(ps2.alone.worm.feat)
 # diversity
 
 # subsystem comparison
-ps2.combined.feat.dds <- rbind(data.table(cmp="associated vs. host", ps2.asso.worm.feat.dds[padj<=0.05]),
-	  data.table(cmp="alone vs. associated", ps2.alone.asso.feat.dds[padj<=0.05]),
-	  data.table(cmp="alone vs. host",ps2.alone.worm.feat.dds[padj<=0.05]))
+ps2.combined.feat.dds <- rbind(data.table(cmp="substrate vs. host", ps2.asso.worm.feat.dds[padj<=0.05]),
+	  data.table(cmp="control vs. substrate", ps2.alone.asso.feat.dds[padj<=0.05]),
+	  data.table(cmp="control vs. host",ps2.alone.worm.feat.dds[padj<=0.05]))
 ps2.combined.feat.dds[!is.na(hierarchy), subsystem:="metabolism"]
-ggplot(ps2.combined.feat.dds, aes(x=subsystem, y=log2FoldChange)) + geom_boxplot() + coord_flip() + theme_minimal(base_size=14) + ylab("log2 fold change") + xlab("") + geom_hline(yintercept=0, linetype="dashed", color = "red") + scale_x_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/dds-diff-ps2.combined.feat-subsystem.pdf", height=2.5, width=7)
+ps2.combined.feat.dds[,cmp:=factor(cmp, levels=c("control vs. substrate","control vs. host","substrate vs. host"))]
+
+ggplot(ps2.combined.feat.dds, aes(x=subsystem, y=log2FoldChange)) + geom_boxplot() + coord_flip() + theme_minimal(base_size=14) + ylab("log2 fold change") + xlab("Subsystem") + geom_hline(yintercept=0, linetype="dashed", color = "red") + scale_x_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_subsystem.pdf", height=2.5, width=7)
 
 
+ggplot(ps2.combined.feat.dds[subsystem=="uast"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Strategies (UAST)") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_uast.pdf", height=2, width=7)
+
+ps2.combined.feat.dds[,id2:=gsub("_"," ",gsub("2"," to ",id))]
+ggplot(ps2.combined.feat.dds[subsystem=="gut"], aes(y=id2, x=log2FoldChange)) +  geom_segment(aes(yend=id2), xend=0, colour="grey50") + geom_point(size=4) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Gut-related gene cluster") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_gut.pdf", height=6, width=9)
+
+ggplot(ps2.combined.feat.dds[subsystem=="medium"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Growth medium") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_medium.pdf", height=2.5, width=5)
+
+ps2.combined.feat.dds[subsystem=="exchange", name:=paste0(name, " (",ifelse(str_extract(id,"(cs|ferm)")=="ferm","pro","up"),")")]
+ggplot(ps2.combined.feat.dds[subsystem=="exchange"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Uptake and production") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_exchanges.pdf", height=7, width=7)
