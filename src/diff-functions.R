@@ -5,11 +5,12 @@ library(data.table)
 library(stringr)
 
 ps2 <- readRDS("../dat/phyloseq_ps2.RDS")
+ps2 <- subset_samples(ps2, !time %in% c(0,2)) # sync time
 levels(ps2@sam_data$source) <- c("control", "substrate", "host") # rename sample sources
 
 ps2.asso.worm  <- subset_samples(ps2, source %in% c("host","substrate"))
-ps2.alone.asso <- subset_samples(ps2, source %in% c("control","substrate") & !time %in% c(0, 2)) # 2 more time points in cembio.alone
-ps2.alone.worm <- subset_samples(ps2, source %in% c("control","host") & !time %in% c(0, 2)) # 2 more time points in cembio.alone
+ps2.alone.asso <- subset_samples(ps2, source %in% c("control","substrate")) # 2 more time points in cembio.alone
+ps2.alone.worm <- subset_samples(ps2, source %in% c("control","host")) # 2 more time points in cembio.alone
 
 
 meta.pwy <- fread("../dat/meta_pwy.tbl")
@@ -65,7 +66,6 @@ ddseq2_analysis <- function(ps.pwy){
 	return(ps.pwy.dds_res)
 }
 
-ps2.feat.dds <- ddseq2_analysis(ps2.feat)
 ps2.asso.worm.feat.dds <- ddseq2_analysis(ps2.asso.worm.feat)
 ps2.alone.asso.feat.dds <- ddseq2_analysis(ps2.alone.asso.feat)
 ps2.alone.worm.feat.dds <- ddseq2_analysis(ps2.alone.worm.feat)
@@ -86,7 +86,6 @@ ps2.combined.feat.dds[,cmp:=factor(cmp, levels=c("control vs. substrate","contro
 
 ggplot(ps2.combined.feat.dds, aes(x=subsystem, y=log2FoldChange)) + geom_boxplot() + coord_flip() + theme_minimal(base_size=14) + ylab("log2 fold change") + xlab("Subsystem") + geom_hline(yintercept=0, linetype="dashed", color = "red") + scale_x_discrete(limits=rev) + facet_wrap(~cmp)
 ggsave("../img/diff-func_subsystem.pdf", height=2.5, width=7)
-
 
 ggplot(ps2.combined.feat.dds[subsystem=="uast"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Strategies (UAST)") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
 ggsave("../img/diff-func_uast.pdf", height=2, width=7.5)
@@ -110,3 +109,25 @@ ggsave("../img/diff-func_cazyme.pdf", height=15, width=12)
 
 ggplot(ps2.combined.feat.dds[subsystem=="interactions"], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("interactions") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
 ggsave("../img/diff-func_interactions.pdf", height=1.7, width=7)
+
+
+
+# selecting features with FC in same direction for host vs. control/substrate
+feat.2cmp <- ps2.combined.feat.dds[cmp%in%c("control vs. host", "substrate vs. host"),.N,by=id][N==2,id]
+ps2.2cmp.sign <- ps2.combined.feat.dds[id %in%feat.2cmp, prod(log2FoldChange)>0, by=id]$id
+ps2.combined.feat.dds[id%in%ps2.2cmp.sign,-c(hierarchy)][order(id)]
+
+
+# PCA
+library(sparsepca)
+spca.dat <- spca(t(ps2.feat@otu_table), k=3)
+spca.loadings.dt <- data.table(id=rownames(ps2.feat@otu_table), spca.dat$loadings)
+spca.dt <- data.table(sample=rownames(spca.dat$scores),spca.dat$scores))
+spca.dt[,time:=ps2@sam_data$time[match(sample,ps2@sam_data$sample_id)]]
+spca.dt[,source:=ps2@sam_data$source[match(sample,ps2@sam_data$sample_id)]]
+ggplot(spca.dt, aes(x=V1,y=V2)) + geom_point(size=3, aes(color=source)) + theme_minimal(base_size=14)
+
+dist.aitchison <- microViz::dist_calc(ps2.feat, dist="aitchison")@dist
+ord.mds.aitchison <- ordinate(ps2.feat, method="PCoA", distance=dist.aitchison)
+plot_ordination(ps2.feat, ord.mds.aitchison, type="samples", color="time") + geom_point(size=3, shape=21, color="black", aes(fill=time)) + facet_wrap(~source) + scale_fill_brewer(type="qual", palette="Oranges") + theme_bw(base_size=14)
+#ggsave("../img/ordination-pcoa_aitchison.pdf", width=8, height=2.5)
