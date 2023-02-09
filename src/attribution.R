@@ -18,6 +18,20 @@ rownames(ps2@otu_table) <- make.names(rownames(ps2@otu_table)) # harmonize otu n
 ps2.combined.feat.dds <- readRDS("../dat/diff-functions.RDS")
 ps2.feat <- readRDS("../dat/phyloseq_ps2-feat.RDS")
 
+dat.pwy.mat <- read.table("~/uni/cembio.ext/dat/agnes/pwy-org-table.tbl")
+dat.pwy.mat[,1]
+ps2.rel <- transform_sample_counts(ps2, function(x){x / sum(x)})
+
+feat.mat <- merge_pwy(c("MYb191.MYb177", "MYb71.MYb49", "MYb396.MYb69.MYb21", "MYb371.MYb331.MYb330.MYb177", "MYb176.MYb174"), dat.pwy.mat[,-1])
+feat.attr.mat <- matrix(0, nrow=nrow(ps2.rel@otu_table), ncol=ncol(feat.mat), dimnames=list(rownames(ps2.rel@otu_table),colnames(feat.mat)))
+org.idx <- match(rownames(ps2.rel@otu_table), rownames(feat.mat))
+for(i in 1:ncol(feat.mat)){
+    feat.attr.mat[,i] <- (ps2.rel@otu_table * feat.mat[org.idx,i])[,1]
+}
+
+
+# regression
+
 ps2.feat.uni.id <- unique(ps2.combined.feat.dds[,.(id,name,subsystem)])
 attr.dt <- foreach(i=1:nrow(ps2.feat.uni.id), .combine=rbind) %dopar%{
     cat("",i,"/",ncol(ps2.feat.uni.id))
