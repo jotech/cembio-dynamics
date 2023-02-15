@@ -37,7 +37,7 @@ stat.dt <- tnst.bt$compare[tnst.bt$compare$Index=="NST" ,c("group1","group2","p.
 stat.dt$y.position <- c(.42,.37,.42)
 stat.dt$p.value <- round(as.numeric(stat.dt$p.count),3); stat.dt$p.signif <- ifelse(stat.dt$p.value>=0.05, "ns", "*")
 tnst.dt$Group <- factor(tnst.dt$Group, levels=c("control","substrate","host"))
-ggplot(tnst.dt) + geom_point(aes(x=Group, y=mean), size=1.5) + geom_errorbar(aes(x=Group, ymin=ifelse(mean-stdev<0,0,mean-stdev), ymax=mean+stdev),width=0.2) + theme_bw(base_size=14) + stat_pvalue_manual(stat.dt, label = "p.signif", hide.ns=T) + scale_y_continuous(expand = expansion(mult = c(0, 0.1))) + xlab("") + ylab("Stochasticity [tNST]") + geom_hline(yintercept=0.5, linetype="dashed", color = "red")
+ggplot(tnst.dt) + geom_point(aes(x=Group, y=mean), size=1.5) + geom_errorbar(aes(x=Group, ymin=ifelse(mean-stdev<0,0,mean-stdev), ymax=mean+stdev),width=0.2) + theme_bw(base_size=14) + stat_pvalue_manual(stat.dt, label = "p.signif", hide.ns=T) + scale_y_continuous(expand = expansion(mult = c(0, 0.1))) + xlab("") + ylab("Stochasticity [tNST]") + geom_hline(yintercept=0.5, linetype="dashed", color = "red") + ylim(c(0.2,0.5))
 ggsave("../img/nst-tnst.pdf", width=3, height=2.5)
 
 
