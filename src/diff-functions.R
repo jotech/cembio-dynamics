@@ -110,13 +110,28 @@ ggsave("../img/diff-func_cazyme.pdf", height=15, width=12)
 ggplot(ps2.combined.feat.dds[subsystem=="interactions"], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("interactions") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
 ggsave("../img/diff-func_interactions.pdf", height=1.7, width=7)
 
+ps2.combined.feat.dds[subsystem=="metabolism", subsystem2:=str_extract(hierarchy, "Activation-Inactivation-Interconversion|Bioluminescence|Biosynthesis|Degradation|Detoxification|Energy-Metabolism|Glycan-Pathways|Macromolecule-Modification|Metabolic-Clusters|Signaling-Pathways|Transport-Pathways")]
+ps2.combined.feat.dds[subsystem=="metabolism" & is.na(subsystem2), subsystem2:="Other"]
+ggplot(ps2.combined.feat.dds[subsystem=="metabolism"], aes(y=str_trunc(subsystem2, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(subsystem2, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("MetaCyc subsystems") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_metabolism.pdf", height=3.5, width=9)
+
+
+# dbcan substrates
+dbcan.long <- fread("~/uni/cembio.ext/src/agnes/dat/dbcan_substrates.csv")
+dbcan.long[,id2:=str_remove(id,"_[0-9]+$")]
+ ps2.combined.feat.dds[subsystem=="cazyme", substrate:=paste0(unique(dbcan.long$substrate[grep(id, dbcan.long$id)]), collapse=","), by=id]
+
+dbcan.sub.dds <- merge(ps2.combined.feat.dds[subsystem=="cazyme"], dbcan.long[,-"id"], by.x="id", by.y="id2")
+
+ggplot(dbcan.sub.dds, aes(x=substrate, y=log2FoldChange)) + geom_boxplot() + coord_flip() + theme_minimal(base_size=14) + ylab("log2 fold change") + xlab("Cazymes predicted substrate") + geom_hline(yintercept=0, linetype="dashed", color = "red") + scale_x_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_cazyme-substrates.pdf", height=12, width=12)
 
 
 # selecting features with FC in same direction for host vs. control/substrate
 feat.2cmp <- ps2.combined.feat.dds[cmp%in%c("control vs. host", "substrate vs. host"),.N,by=id][N==2,id]
 ps2.2cmp.sign <- ps2.combined.feat.dds[id %in%feat.2cmp, prod(log2FoldChange)>0, by=id]$id
 ps2.combined.feat.dds[id%in%ps2.2cmp.sign,-c(hierarchy)][order(id)]
-
+ps2.combined.feat.dds[subsystem=="cazyme", substrate:=paste0(unique(dbcan.long$substrate[grep(id, dbcan.long$id)]), collapse=","), by=id]
 
 # PCA
 library(sparsepca)
