@@ -148,6 +148,11 @@ ps2.combined.feat.dds[grepl("leucine|valine", name),-"hierarchy"]
 ggplot(ps2.combined.feat.dds[grepl("leucine|valine", name)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
 ggsave("../img/diff-func_bcaa.pdf", height=2.5, width=7)
 
+# known microbial metabolites influencing CE
+
+ggplot(ps2.combined.feat.dds[grepl("\\bethanol\\b|\\bindole\\b|dopamine|spermidin|quinolin|propionate|\\bacetate\\b", name) & !grepl("degradation", name)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_knownmicmet.pdf", height=5, width=9)
+
 # selecting features with FC in same direction for host vs. control/substrate
 feat.2cmp <- ps2.combined.feat.dds[cmp%in%c("control vs. host", "substrate vs. host"),.N,by=id][N==2,id]
 ps2.2cmp.sign <- ps2.combined.feat.dds[id %in%feat.2cmp, prod(log2FoldChange)>0, by=id]$id
