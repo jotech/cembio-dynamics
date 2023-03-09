@@ -8,13 +8,13 @@ ps2.sync <- subset_samples(ps2, !time %in% c(0,2)) # sync time
 levels(ps2.sync@sam_data$source) <- c("control", "substrate", "host") # rename sample sources
 
 
-plot_richness(ps2.sync, x="time", measures=c("Shannon")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Alpha diversity (Shannon)")  + stat_compare_means(method="anova", label.x.npc="center") + stat_cor(method="spearman") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1))) + geom_smooth()
+plot_richness(ps2.sync, x="time", measures=c("Shannon")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + xlab("Time") + ylab("Alpha diversity (Shannon)")  + stat_compare_means(method="anova", label.x.npc="center") + stat_cor(method="spearman") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1))) + geom_smooth()
 ggsave("../img/alpha-diversity_shannon.pdf", width=8, height=2.5)
 
-plot_richness(ps2.sync, x="time", measures=c("Chao1")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Alpha diversity (Chao1)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+plot_richness(ps2.sync, x="time", measures=c("Chao1")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + xlab("Time") + ylab("Alpha diversity (Chao1)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 ggsave("../img/alpha-diversity_chao1.pdf", width=8, height=2.5)
 
-plot_richness(ps2.sync, x="time", measures=c("Simpson")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Alpha diversity (Simpson)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+plot_richness(ps2.sync, x="time", measures=c("Simpson")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + xlab("Time") + ylab("Alpha diversity (Simpson)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 ggsave("../img/alpha-diversity_simpson.pdf", width=8, height=2.5)
 
 

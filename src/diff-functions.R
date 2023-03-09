@@ -79,7 +79,8 @@ ps2.combined.feat.dds <- rbind(data.table(cmp="substrate vs. host", ps2.asso.wor
 ps2.combined.feat.dds[!is.na(hierarchy), subsystem:="metabolism"]
 ps2.combined.feat.dds[,cmp:=factor(cmp, levels=c("control vs. substrate","control vs. host","substrate vs. host"))]
 
-#saveRDS(ps2.combined.feat.dds, "../dat/diff-functions.RDS")
+# saveRDS(ps2.combined.feat.dds, "../dat/diff-functions.RDS")
+# fwrite(ps2.combined.feat.dds, "../dat/diff-functions.csv")
 # ps2.combined.feat.dds <- readRDS("../dat/diff-functions.RDS")
 
 # plotting
@@ -149,9 +150,14 @@ ggplot(ps2.combined.feat.dds[grepl("leucine|valine", name)], aes(y=str_trunc(nam
 ggsave("../img/diff-func_bcaa.pdf", height=2.5, width=7)
 
 # known microbial metabolites influencing CE
+ggplot(ps2.combined.feat.dds[grepl("\\bethanol\\b|\\bindole\\b|dopamine|spermidin|quinolin|propionate|\\bacetate\\b", name)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_knownmicmet.pdf", height=6, width=9)
 
-ggplot(ps2.combined.feat.dds[grepl("\\bethanol\\b|\\bindole\\b|dopamine|spermidin|quinolin|propionate|\\bacetate\\b", name) & !grepl("degradation", name)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_knownmicmet.pdf", height=5, width=9)
+# b12
+ggplot(ps2.combined.feat.dds[grepl("cobalamin|b12|cobalt", name,ignore.case=T)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_b12.pdf", height=2, width=7)
+
+
 
 # selecting features with FC in same direction for host vs. control/substrate
 feat.2cmp <- ps2.combined.feat.dds[cmp%in%c("control vs. host", "substrate vs. host"),.N,by=id][N==2,id]

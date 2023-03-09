@@ -157,8 +157,10 @@ permanova.bray.rand.asso.dt <- bray.rand.lst[[1]][,list(pval_mean=mean(pval)),by
 bray.rand.asso.melt <- melt(bray.rand.asso.dt, id.vars=c("pair","time","run"))
 bray.rand.asso.melt[, cmp:=str_remove(gsub("asso","substrate",gsub("alone","control",variable)), "^dist\\.")]
 bray.rand.asso.melt <- bray.rand.asso.melt[!(run>1 & cmp=="host.substrate")]
+bray.rand.asso.melt[,cmp:=factor(cmp, levels=c("substrate.control","host.control","host.substrate"), labels=c("control vs. substrate","control vs. host","substrate vs. host"))]
+permanova.bray.rand.asso.dt[,cmp:=factor(cmp, levels=c("substrate.control","host.control","host.substrate"), labels=c("control vs. substrate","control vs. host","substrate vs. host"))]
 ggplot(bray.rand.asso.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (Bray-Curtis)") + geom_text(data=permanova.bray.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",round(pval_mean,3))), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
-#ggsave("../img/beta-diversity_bray-pairs.pdf", width=8, height=2.5)
+#ggsave("../img/beta-diversity_bray-pairs.pdf", width=8, height=2.6)
 
 #aitchison.rand.lst <- readRDS("../dat/beta-div_aitchison.rand-asso.RDS")
 aitchison.rand.asso.dt <- aitchison.rand.lst[[2]]
@@ -166,6 +168,8 @@ permanova.aitchison.rand.asso.dt <- aitchison.rand.lst[[1]][,list(pval_mean=mean
 aitchison.rand.asso.melt <- melt(aitchison.rand.asso.dt, id.vars=c("pair","time","run"))
 aitchison.rand.asso.melt[, cmp:=str_remove(gsub("asso","substrate",gsub("alone","control",variable)), "^dist\\.")]
 aitchison.rand.asso.melt <- aitchison.rand.asso.melt[!(run>1 & cmp=="host.substrate")]
+aitchison.rand.asso.melt[,cmp:=factor(cmp, levels=c("substrate.control","host.control","host.substrate"), labels=c("control vs. substrate","control vs. host","substrate vs. host"))]
+permanova.aitchison.rand.asso.dt[,cmp:=factor(cmp, levels=c("substrate.control","host.control","host.substrate"), labels=c("control vs. substrate","control vs. host","substrate vs. host"))]
 ggplot(aitchison.rand.asso.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (Aitchison)") + geom_text(data=permanova.aitchison.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",round(pval_mean,3))), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_aitchison-pairs.pdf", width=8, height=2.5)
 
@@ -175,5 +179,7 @@ permanova.unifrac.rand.asso.dt <- unifrac.rand.lst[[1]][,list(pval_mean=mean(pva
 unifrac.rand.asso.melt <- melt(unifrac.rand.asso.dt, id.vars=c("pair","time","run"))
 unifrac.rand.asso.melt[, cmp:=str_remove(gsub("asso","substrate",gsub("alone","control",variable)), "^dist\\.")]
 unifrac.rand.asso.melt <- unifrac.rand.asso.melt[!(run>1 & cmp=="host.substrate")]
+unifrac.rand.asso.melt[,cmp:=factor(cmp, levels=c("substrate.control","host.control","host.substrate"), labels=c("control vs. substrate","control vs. host","substrate vs. host"))]
+permanova.unifrac.rand.asso.dt[,cmp:=factor(cmp, levels=c("substrate.control","host.control","host.substrate"), labels=c("control vs. substrate","control vs. host","substrate vs. host"))]
 ggplot(unifrac.rand.asso.melt, aes(x=time, y=value)) + geom_boxplot() + facet_wrap(~cmp) + theme_bw(base_size=14) + ylab("Beta-diversity (Unifrac)") + geom_text(data=permanova.unifrac.rand.asso.dt, mapping = aes(x = -Inf, y = Inf, label=paste("PERMANOVA, p =",round(pval_mean,3))), hjust=-0.1, vjust=1.5) + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
 #ggsave("../img/beta-diversity_unifrac-pairs.pdf", width=8, height=2.5)
