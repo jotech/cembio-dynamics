@@ -120,7 +120,7 @@ for (i in seq_along(attr.dt)) set(attr.dt, i=which(is.na(attr.dt[[i]])), j=i, va
 attr.dt <- readRDS("../dat/attribution.RDS")
 attr.dt[,org2:=factor(org, levels=group.dt$org)]
 
-ggplot(attr.dt[!is.na(org2)], aes(x=org2,y=lasso.coef)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Regression coefficient (lasso)") + theme(axis.text.y = element_text(size=10, color=group.dt$color))
+ggplot(attr.dt[!is.na(org2) & subsystem!="interactions"], aes(x=org2,y=lasso.coef)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Regression coefficient (lasso)") + theme(axis.text.y = element_text(size=10, color=group.dt$color)) + scale_y_continuous(n.breaks = 3)
 ggsave("../img/attr-lasso.pdf", width=12, height=7)
 
 ggplot(attr.dt[!is.na(org2)], aes(x=org2,y=boruta.imp)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Regression coefficient (lasso)") + theme(axis.text.y = element_text(size=10, color=group.dt$color))
