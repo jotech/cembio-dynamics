@@ -3,7 +3,6 @@ library(phyloseq)
 library(ggpubr)
 library(foreach)
 library(doParallel)
-library(iCAMP)
 
 cores <- 3
 rand.time <- 1000

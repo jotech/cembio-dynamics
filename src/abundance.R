@@ -25,9 +25,27 @@ setnames(ps2rel.dt, old="rn", new="org")
 ps2rel.dt <- merge(ps2rel.dt, data.frame(ps2rel@sam_data), by="sample_id", all.x=T)
 ps2rel.dt <- merge(ps2rel.dt, data.frame(ps2rel@tax_table[,6:8]), by.x="org", by.y="id", all.x=T)
 ps2rel.dt <- merge(ps2rel.dt, colors.taxa, by.x="Genus", by.y="group", all.x=T)
-ps2rel.sel.dt <- ps2rel.dt[!time%in%c(0,2) & org%in%c("MYb71,MYb49", "MYb10", "MYb388", "MYb328", "JUb44", "JUb134", "CEent1", "MYb396,MYb69,MYb21", "JUb19")]
+#ps2rel.sel.dt <- ps2rel.dt[!time%in%c(0,2) & org%in%c("MYb71,MYb49", "MYb10", "MYb388", "MYb328", "JUb44", "JUb134", "CEent1", "MYb396,MYb69,MYb21", "JUb19")]
+ps2rel.sel.dt <- ps2rel.dt[org%in%c("MYb71,MYb49", "MYb10", "MYb388", "MYb328", "JUb44", "JUb134", "CEent1", "MYb396,MYb69,MYb21", "JUb19")]
 ps2rel.sel.dt[time==42,label:=org]
 ggplot(ps2rel.sel.dt, aes(x=time, y=abundance, color=org, group=org)) + stat_summary(geom="point", fun=mean, size=2) + stat_summary(geom="line", linewidth=1.1, fun=mean) + stat_summary(geom="errorbar", fun.data=mean_se, alpha=0.5, width=0.2) + stat_summary(geom="label_repel", fun=mean, aes(label = label), size=2.5, na.rm = TRUE, max.overlaps=15) + facet_wrap(~source) + scale_colour_manual(values=setNames(ps2rel.sel.dt$color, ps2rel.sel.dt$org)) + theme_bw(base_size=14) + theme(legend.position="none") + ylab("Relative abundance") + xlab("Time [h]")
 ggsave("../img/ASV-timeseries.pdf", width=12, height=4)
 
+ps2rel.sel.dt <- ps2rel.dt[org%in%unique(ps2rel.dt[grepl("Acinetobacter", Species), org])]
+ps2rel.sel.dt[time==42,label:=org]
+ggplot(ps2rel.sel.dt, aes(x=time, y=abundance, color=org, group=org)) + stat_summary(geom="point", fun=mean, size=2) + stat_summary(geom="line", linewidth=1.1, fun=mean) + stat_summary(geom="errorbar", fun.data=mean_se, alpha=0.5, width=0.2) + stat_summary(geom="label_repel", fun=mean, aes(label = label), size=2.5, na.rm = TRUE, max.overlaps=15) + facet_wrap(~source) + scale_colour_manual(values=setNames(ps2rel.sel.dt$color, ps2rel.sel.dt$org)) + theme_bw(base_size=14) + theme(legend.position="none") + ylab("Relative abundance") + xlab("Time [h]")
+ggsave("../img/ASV-timeseries_Acinetobacter.pdf", width=12, height=4)
 
+
+# correlations
+cor.mat <- Hmisc::rcorr(t(as.matrix(subset_samples(ps2rel, source=="host")@otu_table)))
+#cor.mat <- Hmisc::rcorr(t(as.matrix(filter_taxa(ps2rel, function(x) max(x) >= 0.05, prune =  TRUE)@otu_table)))
+#cor.mat <- Hmisc::rcorr(t(as.matrix(ps2rel@otu_table)))
+cor.tri <- upper.tri(cor.mat$r)
+cor.dt <- data.table(row=rownames(cor.mat$r)[row(cor.mat$r)[cor.tri]], column=rownames(cor.mat$r)[col(cor.mat$r)[cor.tri]], cor=cor.mat$r[cor.tri], p=cor.mat$P[cor.tri])
+#cor.dt[abs(cor)>0.9]
+cor.dt[cor < -0.8]
+
+ps2rel.sel.dt <- ps2rel.dt[!time%in%c(0,2) & org%in%c("MYb58", "MYb10", "MYb71,MYb49", "MYb158", "MYb191,MYb177", "BIGb0393", "JUb19")]
+ps2rel.sel.dt[time==42,label:=org]
+ggplot(ps2rel.sel.dt, aes(x=time, y=abundance, color=org, group=org)) + stat_summary(geom="point", fun=mean, size=2) + stat_summary(geom="line", linewidth=1.1, fun=mean) + stat_summary(geom="errorbar", fun.data=mean_se, alpha=0.5, width=0.2) + stat_summary(geom="label_repel", fun=mean, aes(label = label), size=2.5, na.rm = TRUE, max.overlaps=15) + facet_wrap(~source) + scale_colour_manual(values=setNames(ps2rel.sel.dt$color, ps2rel.sel.dt$org)) + theme_bw(base_size=14) + theme(legend.position="none") + ylab("Relative abundance") + xlab("Time [h]")

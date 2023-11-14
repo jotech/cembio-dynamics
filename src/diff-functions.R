@@ -69,12 +69,12 @@ ddseq2_analysis <- function(ps.pwy){
 ps2.asso.worm.feat.dds <- ddseq2_analysis(ps2.asso.worm.feat)
 ps2.alone.asso.feat.dds <- ddseq2_analysis(ps2.alone.asso.feat)
 ps2.alone.worm.feat.dds <- ddseq2_analysis(ps2.alone.worm.feat)
-
-# diversity
+#saveRDS(list(ps2.asso.worm.feat.dds, ps2.alone.asso.feat.dds, ps2.alone.worm.feat.dds), "../dat/diff-functions_all-cmp.RDS")
 
 # subsystem comparison
+if(nrow(ps2.alone.asso.feat.dds[padj<=0.05])==0) print("No differential function between control and substrate")
 ps2.combined.feat.dds <- rbind(data.table(cmp="substrate vs. host", ps2.asso.worm.feat.dds[padj<=0.05]),
-	  data.table(cmp="control vs. substrate", ps2.alone.asso.feat.dds[padj<=0.05]),
+	  #data.table(cmp="control vs. substrate", ps2.alone.asso.feat.dds[padj<=0.05]),
 	  data.table(cmp="control vs. host",ps2.alone.worm.feat.dds[padj<=0.05]))
 ps2.combined.feat.dds[!is.na(hierarchy), subsystem:="metabolism"]
 ps2.combined.feat.dds[,cmp:=factor(cmp, levels=c("control vs. substrate","control vs. host","substrate vs. host"))]
@@ -86,68 +86,47 @@ ps2.combined.feat.dds[,cmp:=factor(cmp, levels=c("control vs. substrate","contro
 # plotting
 
 ggplot(ps2.combined.feat.dds, aes(x=subsystem, y=log2FoldChange)) + geom_boxplot() + coord_flip() + theme_minimal(base_size=14) + ylab("log2 fold change") + xlab("Subsystem") + geom_hline(yintercept=0, linetype="dashed", color = "red") + scale_x_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_subsystem.pdf", height=2.5, width=7)
+ggsave("../img/diff-func_subsystem.pdf", height=2.5, width=5)
 
 ggplot(ps2.combined.feat.dds[subsystem=="uast"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Strategies (UAST)") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_uast.pdf", height=2, width=7.5)
+ggsave("../img/diff-func_uast.pdf", height=2.5, width=7)
 
-ps2.combined.feat.dds[,id2:=gsub("_"," ",gsub("2"," to ",id))]
+ps2.combined.feat.dds[,id2:=gsub(",",", ",gsub("_"," ",gsub("2"," to ",id)))]
+substr(ps2.combined.feat.dds$id2, 1, 1) <- toupper(substr(ps2.combined.feat.dds$id2, 1, 1))
 ggplot(ps2.combined.feat.dds[subsystem=="gut"], aes(y=id2, x=log2FoldChange)) +  geom_segment(aes(yend=id2), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Gut-related gene cluster") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_gut.pdf", height=6, width=9.5)
+ggsave("../img/diff-func_gut.pdf", height=6, width=9.7)
 
 ggplot(ps2.combined.feat.dds[subsystem=="medium"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Growth medium") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_medium.pdf", height=2.5, width=6.7)
+ggsave("../img/diff-func_medium.pdf", height=4.5, width=6.7)
 
 ps2.combined.feat.dds[subsystem=="exchange", name:=paste0(name, " (",ifelse(str_extract(id,"(cs|ferm)")=="ferm","pro","up"),")")]
 ggplot(ps2.combined.feat.dds[subsystem=="exchange"], aes(y=name, x=log2FoldChange)) +  geom_segment(aes(yend=name), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Uptake and production") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_exchanges.pdf", height=7, width=8)
+ggsave("../img/diff-func_exchanges.pdf", height=7, width=6.5)
 
-ggplot(ps2.combined.feat.dds[subsystem=="virulence"], aes(y=id, x=log2FoldChange)) +  geom_segment(aes(yend=id), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Virulence genes") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_virulence.pdf", height=20, width=12)
+vfdb.categories <- c("Adherence", "Antimicrobial activity/Competitive advantage", "Biofilm", "Effector delivery system", "Exotoxin", "Exoenzyme", "Immune modulation", "Invasion", "Motility", "Nutritional/Metabolic factor", "Regulation", "Stress survival", "Post-translational modification", "Others")
+ggplot(ps2.combined.feat.dds[subsystem=="virulence" & id %in% vfdb.categories], aes(y=id, x=log2FoldChange)) +  geom_segment(aes(yend=id), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("Virulence genes") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
+ggsave("../img/diff-func_virulence.pdf", height=3, width=9)
 
 ggplot(ps2.combined.feat.dds[subsystem=="cazyme"], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("carbohydrate-activae enzymes (cazymes)") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_cazyme.pdf", height=15, width=12)
+ggsave("../img/diff-func_cazyme.pdf", height=15, width=10)
 
 ggplot(ps2.combined.feat.dds[subsystem=="interactions"], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("interactions") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_interactions.pdf", height=1.7, width=7)
+ggsave("../img/diff-func_interactions.pdf", height=2, width=7)
 
 ps2.combined.feat.dds[subsystem=="metabolism", subsystem2:=str_extract(hierarchy, "Activation-Inactivation-Interconversion|Bioluminescence|Biosynthesis|Degradation|Detoxification|Energy-Metabolism|Glycan-Pathways|Macromolecule-Modification|Metabolic-Clusters|Signaling-Pathways|Transport-Pathways")]
 ps2.combined.feat.dds[subsystem=="metabolism" & is.na(subsystem2), subsystem2:="Other"]
 ggplot(ps2.combined.feat.dds[subsystem=="metabolism"], aes(y=str_trunc(subsystem2, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(subsystem2, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("MetaCyc subsystems") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_metabolism.pdf", height=3.5, width=9)
+ggsave("../img/diff-func_metabolism.pdf", height=3.5, width=7)
 
-
-# cazyme
-sort(table(ps2.combined.feat.dds[subsystem=="cazyme", str_remove(id,"[0-9]+$")]),decreasing=T)
-dbcan.long <- fread("~/uni/cembio.ext/src/agnes/dat/dbcan_substrates.csv")
-dbcan.long[,id2:=str_remove(id,"_[0-9]+$")]
-#ps2.combined.feat.dds[subsystem=="cazyme", substrate:=paste0(unique(dbcan.long$substrate[grep(id, dbcan.long$id)]), collapse=","), by=id]
-dbcan.sub.dds <- merge(ps2.combined.feat.dds[subsystem=="cazyme"], dbcan.long[,-c("id")], by.x="id", by.y="id2")
-ggplot(dbcan.sub.dds, aes(x=substrate, y=log2FoldChange)) + geom_boxplot() + coord_flip() + theme_minimal(base_size=14) + ylab("log2 fold change") + xlab("Cazymes predicted substrate") + geom_hline(yintercept=0, linetype="dashed", color = "red") + scale_x_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_cazyme-substrates.pdf", height=12, width=12)
-#
-library(hmdbQuery)
-library(stringdist)
-dbcan.sub.anno <- data.table()
-hmdb.dt <- fread("~/tmp/workspace/hmdb/metabolites-2023-02-20.csv")
-for(sub in unique(dbcan.sub.dds$substrate)){
-    query.id <- hmdb.dt[sub==tolower(NAME),HMDB_ID]
-    if(length(query.id)==0) query.id <- hmdb.dt[amatch(sub,str_remove(NAME,"-"), maxDist=2), HMDB_ID]
-    if(is.na(query.id)) query.id <- hmdb.dt[grepl(sub,NAME,ignore.case=T)][1,HMDB_ID]
-    if(is.na(query.id)) next
-    query = HmdbEntry(prefix = "http://www.hmdb.ca/metabolites/", id = query.id)
-    query.dat <- store(query)
-    dbcan.sub.anno <- rbind(dbcan.sub.anno, data.table(sub, id=query.id, name=query.dat$name, class=query.dat$taxonomy$direct_parent))
-}
 
 # hydroxy proline/acetoin
 ggplot(ps2.combined.feat.dds[grepl("acetoin", name) | (grepl("proline", name) & grepl("hydroxy",name))], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_hydroxyproline-acetoin.pdf", height=2.5, width=11)
+ggsave("../img/diff-func_hydroxyproline-acetoin.pdf", height=2.5, width=9)
 
 # BCAA
 ps2.combined.feat.dds[grepl("leucine|valine", name),-"hierarchy"]
 ggplot(ps2.combined.feat.dds[grepl("leucine|valine", name)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
-ggsave("../img/diff-func_bcaa.pdf", height=2.5, width=7)
+ggsave("../img/diff-func_bcaa.pdf", height=2, width=5)
 
 # known microbial metabolites influencing CE
 ggplot(ps2.combined.feat.dds[grepl("\\bethanol\\b|\\bindole\\b|dopamine|spermidin|quinolin|propionate|\\bacetate\\b", name)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
@@ -157,26 +136,3 @@ ggsave("../img/diff-func_knownmicmet.pdf", height=6, width=9)
 ggplot(ps2.combined.feat.dds[grepl("cobalamin|b12|cobalt", name,ignore.case=T)], aes(y=str_trunc(name, 55, "right"), x=log2FoldChange)) +  geom_segment(aes(yend=str_trunc(name, 55, "right")), xend=0, colour="grey50") + geom_point(size=4, aes(color=baseMean)) + theme_minimal(base_size=14) + xlab("log2 fold change") + ylab("") + geom_vline(xintercept=0, linetype="dashed", color = "red") + scale_y_discrete(limits=rev) + facet_wrap(~cmp)
 ggsave("../img/diff-func_b12.pdf", height=2, width=7)
 
-
-
-# selecting features with FC in same direction for host vs. control/substrate
-feat.2cmp <- ps2.combined.feat.dds[cmp%in%c("control vs. host", "substrate vs. host"),.N,by=id][N==2,id]
-ps2.2cmp.sign <- ps2.combined.feat.dds[id %in%feat.2cmp, prod(log2FoldChange)>0, by=id]$id
-ps2.combined.feat.dds[id%in%ps2.2cmp.sign,-c(hierarchy)][order(id)]
-ps2.combined.feat.dds[subsystem=="cazyme", substrate:=paste0(unique(dbcan.long$substrate[grep(id, dbcan.long$id)]), collapse=","), by=id]
-
-
-
-# PCA
-library(sparsepca)
-spca.dat <- spca(t(ps2.feat@otu_table), k=3)
-spca.loadings.dt <- data.table(id=rownames(ps2.feat@otu_table), spca.dat$loadings)
-spca.dt <- data.table(sample=rownames(spca.dat$scores),spca.dat$scores))
-spca.dt[,time:=ps2@sam_data$time[match(sample,ps2@sam_data$sample_id)]]
-spca.dt[,source:=ps2@sam_data$source[match(sample,ps2@sam_data$sample_id)]]
-ggplot(spca.dt, aes(x=V1,y=V2)) + geom_point(size=3, aes(color=source)) + theme_minimal(base_size=14)
-
-dist.aitchison <- microViz::dist_calc(ps2.feat, dist="aitchison")@dist
-ord.mds.aitchison <- ordinate(ps2.feat, method="PCoA", distance=dist.aitchison)
-plot_ordination(ps2.feat, ord.mds.aitchison, type="samples", color="time") + geom_point(size=3, shape=21, color="black", aes(fill=time)) + facet_wrap(~source) + scale_fill_brewer(type="qual", palette="Oranges") + theme_bw(base_size=14)
-#ggsave("../img/ordination-pcoa_aitchison.pdf", width=8, height=2.5)

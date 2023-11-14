@@ -41,6 +41,10 @@ ggsave("../img/sample-reads_hist2.pdf", width=8, height=6)
 compare_means(reads~source, data=read.count.dt, group.by="time")
 compare_means(reads~source, data=read.count.dt[reads>=12000], group.by="time")
 
+read.count.dt[,source:=factor(source)]
+levels(read.count.dt$source) <- c("control","substrate", "host") # rename sample sources
+ggplot(read.count.dt, aes(x=reads2, color=source)) + geom_freqpoly(breaks=c(seq(0, 20000, by=1000))) + theme_bw(base_size=14) + xlab("Number of reads per sample") + ylab("Count")
+ggsave("../img/sample-reads_hist3.pdf", width=5, height=3)
 
 #############
 # filtering #
@@ -70,9 +74,10 @@ for(tax in unique(unname(ps1@tax_table[,8]))){
     if(any(is.na(ps2@tax_table[,8]))) ps2@tax_table[,8][which(is.na(ps2@tax_table[,8]))] <- as.character(tax) # group entry can be missing for merged taxa
   }
 }
-ps2@tax_table[,8][which(ps2@tax_table[,8]=="MYb191,MYb177")] <- "MYb191*" # rename (MYb177 unclear)
+ps2@tax_table[,8][which(ps2@tax_table[,8]=="MYb371,MYb331,MYb330,MYb177")] <- "MYb371,MYb331,MYb330" # MYb177 is Acinetobacter not Pseudomonas (new sequencing 07/2023)
 ps2 <- prune_taxa(! taxa_names(ps2) %in% taxa_names(ps2)[ps2@tax_table[,8] == "JUb66,MYb186"],ps2) # remove ambigious entry
 ps2 <- filter_taxa(ps2, function(x) mean(x) > 0, TRUE) # remove low abundant
+# check mean reads per species
 ps2.tax.dt <- data.table(id=as.character(ps2@tax_table[,8]), mean.reads=colMeans(ps2@otu_table))
 
 
@@ -86,8 +91,8 @@ sample_data(ps2)$source <- factor(sample_data(ps2)$source)
 # fix name for merged species
 ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb71,MYb49")] <- "Ochrobactrum sp."
 ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb176,MYb174")] <- "Citrobacter sp."
-ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb191*")] <- "Acinetobacter sp."
-ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb371,MYb331,MYb330,MYb177")] <- "Pseudomonas sp."
+ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb191,MYb177")] <- "Acinetobacter sp."
+ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb371,MYb331,MYb330")] <- "Pseudomonas sp."
 # Ochrobactrums had wrong order, family, genus classified by DADA2 taxonomy
 ps2@tax_table[,4][which(ps2@tax_table[,8]=="MYb71,MYb49")] <- as.character(ps2@tax_table[,4][which(ps2@tax_table[,8]=="MYb58")]) 
 ps2@tax_table[,5][which(ps2@tax_table[,8]=="MYb71,MYb49")] <- as.character(ps2@tax_table[,5][which(ps2@tax_table[,8]=="MYb58")]) 
@@ -122,7 +127,7 @@ if(!is.logical(all.equal(asv.rel.old,as.data.frame(ps2.rel@otu_table)))){
 
 tree <- read.tree("../dat/gtdbtk.bac120.user_msa.fasta.gz_aggregated-rooted.treefile")
 tree$tip.label <- gsub("\\.",",", tree$tip.label)
-tree$tip.label[which(tree$tip.label=="MYb191,")] <- "MYb191*"
+tree$tip.label <- gsub("\\'","", tree$tip.label)
 ps2a <- subset_taxa(ps2, id!="unknown") # remove unknown group
 ps2.tree <- phyloseq(otu_table(ps2a), tax_table(ps2a), sample_data(ps2a), phy_tree(tree))
 ps2.tree.old <- readRDS("../dat/phyloseq_ps2.tree.RDS")

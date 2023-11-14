@@ -32,6 +32,15 @@ TukeyHSD(aov(Shannon ~ source, data = alpha.div.dt))
 TukeyHSD(aov(Simpson ~ source, data = alpha.div.dt))
 TukeyHSD(aov(Chao1 ~ source, data = alpha.div.dt))
 
-alpha.div.melt <- melt(alpha.div.dt, id.vars=c("source","time","sample"))[variable=="Shannon"]; alpha.div.dt[,time:=as.numeric(as.character(time))]
+alpha.div.melt <- melt(alpha.div.dt, id.vars=c("source","time","sample"))[variable=="Shannon"]; alpha.div.melt[,time:=as.numeric(as.character(time))]
 ggscatter(alpha.div.melt, x="time",y="value", add="reg.line", add.params = list(color = "blue", fill = "lightgray"), conf.int=T, facet.by="source") + stat_cor(method="spearman") + theme_minimal(base_size=14) + ylab("Alpha diversity (Shannon)") + scale_x_continuous(breaks=unique(alpha.div.melt$time))
 ggsave("../img/alpha-diversity_shannon-trend.pdf", width=8, height=3)
+alpha.div2.melt <- melt(alpha.div.dt, id.vars=c("source","time","sample"))[variable=="Simpson"]; alpha.div2.melt[,time:=as.numeric(as.character(time))]
+ggscatter(alpha.div2.melt, x="time",y="value", add="reg.line", add.params = list(color = "blue", fill = "lightgray"), conf.int=T, facet.by="source") + stat_cor(method="spearman") + theme_minimal(base_size=14) + ylab("Alpha diversity (Shannon)") + scale_x_continuous(breaks=unique(alpha.div.melt$time))
+ggsave("../img/alpha-diversity_simpson-trend.pdf", width=8, height=3)
+
+# features alpha diversity
+ps2.feat <- readRDS("../dat/phyloseq_ps2-feat.RDS")
+ps2.feat.same.t <- subset_samples(ps2.feat, !time %in% c(0,2))
+plot_richness(ps2.feat.same.t, x="time", measures=c("Shannon")) + geom_boxplot() + facet_wrap(~source) + theme_bw(base_size=14) + ylab("Alpha diversity (Shannon)") + stat_compare_means(method="anova", label.x.npc="center") + scale_y_continuous(expand = expansion(mult = c(0.05, 0.1)))
+ggsave("../img/features_alpha-diversity.pdf", width=8, height=2.5)

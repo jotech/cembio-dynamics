@@ -1,9 +1,10 @@
 library(ggplot2)
 library(clusterProfiler)
 
-ps2.asso.worm.feat.dds <- readRDS("../dat/dds-diff-asso.worm.feat.RDS")
-ps2.alone.asso.feat.dds <- readRDS("../dat/dds-diff-alone.asso.feat.RDS")
-ps2.alone.worm.feat.dds <- readRDS("../dat/dds-diff-alone.worm.feat.RDS")
+ps2.feat.dds <- readRDS("../dat/diff-functions_all-cmp.RDS")
+ps2.asso.worm.feat.dds  <- ps2.feat.dds[[1]] 
+ps2.alone.asso.feat.dds <- ps2.feat.dds[[2]]
+ps2.alone.worm.feat.dds <- ps2.feat.dds[[3]]
 
 biosynthesis <- c("Aminoacyl-tRNAs-Charging","AROMATIC-COMPOUNDS-BIOSYN","Carbohydrates-Biosynthesis","Cell-Structure-Biosynthesis","Cofactor-Biosynthesis","Lipid-Biosynthesis","Metabolic-Regulators","Nucleotide-Biosynthesis","Other-biosynthesis","Polyprenyl-Biosynthesis","SECONDARY-METABOLITE-BIOSYNTHESIS","Storage-Compounds-Biosynthesis","Tetrapyrrole-Biosynthesis")
 degradation <- c("Alcohol-Degradation","Aldehyde-Degradation","AMINE-DEG","Amino-Acid-Degradation","AROMATIC-COMPOUNDS-DEGRADATION","C1-COMPOUNDS","Carbohydrates-Degradation","CARBOXYLATES-DEG","CHLORINATED-COMPOUNDS-DEG","COFACTOR-DEGRADATION","Other-Degradation","Fatty-Acid-and-Lipid-Degradation","HORMONE-DEG","Noncarbon-Nutrients","NUCLEO-DEG","Polymer-Degradation", "Protein-Degradation","SECONDARY-METABOLITE-DEGRADATION")
@@ -25,11 +26,11 @@ ora_fun <- function(feat.dds, dir){
 }
 
 														 
-ora.dt <- rbind(data.table(id="worm vs. associated", data.frame(ora_fun(ps2.asso.worm.feat.dds, dir="up"))),
-	  data.table(id="associated vs. worm", data.frame(ora_fun(ps2.asso.worm.feat.dds, dir="down"))),
-	  data.table(id="worm vs. alone", data.frame(ora_fun(ps2.alone.worm.feat.dds, dir="up"))),
-	  data.table(id="alone vs. worm", data.frame(ora_fun(ps2.alone.worm.feat.dds, dir="down"))),
-	  data.table(id="associated vs. alone", data.frame(ora_fun(ps2.alone.asso.feat.dds, dir="up"))),
-	  data.table(id="alone vs. associated", data.frame(ora_fun(ps2.alone.asso.feat.dds, dir="down"))))
+ora.dt <- rbind(data.table(id="host vs. substrate", data.frame(ora_fun(ps2.asso.worm.feat.dds, dir="up"))),
+	  data.table(id="substrate vs. host", data.frame(ora_fun(ps2.asso.worm.feat.dds, dir="down"))),
+	  data.table(id="host vs. control", data.frame(ora_fun(ps2.alone.worm.feat.dds, dir="up"))),
+	  data.table(id="control vs. host", data.frame(ora_fun(ps2.alone.worm.feat.dds, dir="down"))))
+	  #data.table(id="substrate vs. control", data.frame(ora_fun(ps2.alone.asso.feat.dds, dir="up"))),
+	  #data.table(id="control vs. substrate", data.frame(ora_fun(ps2.alone.asso.feat.dds, dir="down"))))
 
-print(ora.dt)
+print(ora.dt[!is.na(ID), -"geneID"])

@@ -64,7 +64,7 @@ merge_pwy <- function(merge.lst, dat.mat){
 	return(rbind(dat.mat[-unique(idx.lst),], new.rows))
 }
 
-feat.mat <- merge_pwy(c("MYb191.MYb177", "MYb71.MYb49", "MYb396.MYb69.MYb21", "MYb371.MYb331.MYb330.MYb177", "MYb176.MYb174"), dat.feat.mat)
+feat.mat <- merge_pwy(c("MYb191.MYb177", "MYb71.MYb49", "MYb396.MYb69.MYb21", "MYb371.MYb331.MYb330", "MYb176.MYb174"), dat.feat.mat)
 cum.attr.mat <- matrix(0, nrow=nrow(ps2.rel@otu_table), ncol=ncol(feat.mat), dimnames=list(rownames(ps2.rel@otu_table),colnames(feat.mat)))
 org.idx <- match(rownames(ps2.rel@otu_table), rownames(feat.mat))
 for(i in 1:ncol(feat.mat)){
@@ -78,6 +78,7 @@ cum.attr.dt <- cbind(cum.attr.dt, ps2.combined.feat.dds[,.(name,subsystem)][matc
 cum.attr.dt[is.na(cumulative),cumulative:=0]
 
 cum.attr.dt[,org:=factor(org, levels=group.dt$org)]
+levels(cum.attr.dt$org) <- gsub("\\.",",",levels(cum.attr.dt$org))
 ggplot(cum.attr.dt, aes(x=org,y=cumulative)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Cumulative abundance") + theme(axis.text.y = element_text(size=10,color=group.dt$color))
 ggsave("../img/attr-cumulative.pdf", width=12, height=7)
 
@@ -119,12 +120,13 @@ for (i in seq_along(attr.dt)) set(attr.dt, i=which(is.na(attr.dt[[i]])), j=i, va
 #
 attr.dt <- readRDS("../dat/attribution.RDS")
 attr.dt[,org2:=factor(org, levels=group.dt$org)]
+levels(attr.dt$org2) <- gsub("\\.",",",levels(attr.dt$org2))
 
 ggplot(attr.dt[!is.na(org2) & subsystem!="interactions"], aes(x=org2,y=lasso.coef)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Regression coefficient (lasso)") + theme(axis.text.y = element_text(size=10, color=group.dt$color)) + scale_y_continuous(n.breaks = 3)
 ggsave("../img/attr-lasso.pdf", width=12, height=7)
 
-ggplot(attr.dt[!is.na(org2)], aes(x=org2,y=boruta.imp)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Regression coefficient (lasso)") + theme(axis.text.y = element_text(size=10, color=group.dt$color))
-ggplot(attr.dt, aes(x=org2,y=boruta.imp)) + geom_boxplot() + facet_wrap(~subsystem,ncol=1,scales="free_y") + theme_minimal(base_size=14) + xlab("") + ylab("Importance score (Boruta)") + theme(axis.text.x = element_text(size=10, angle = 45, hjust = 1, color=org.col))
+ggplot(attr.dt[!is.na(org2)], aes(x=org2,y=boruta.imp)) + geom_boxplot() + facet_wrap(~subsystem,nrow=1,scales="free_x") + coord_flip() + theme_minimal(base_size=14) + xlab("") + ylab("Importance (random forest)") + theme(axis.text.y = element_text(size=10, color=group.dt$color))
+#ggplot(attr.dt, aes(x=org2,y=boruta.imp)) + geom_boxplot() + facet_wrap(~subsystem,ncol=1,scales="free_y") + theme_minimal(base_size=14) + xlab("") + ylab("Importance score (Boruta)") + theme(axis.text.x = element_text(size=10, angle = 45, hjust = 1, color=group.dt$color))
 ggsave("../img/attr-boruta.pdf", width=12, height=7)
 
 
@@ -134,4 +136,9 @@ ggsave("../img/attr_uast-lasso.pdf", width=4.5, height=6)
 ggplot(attr.dt[subsystem=="uast" & boruta.imp!=0], aes(y=org2,x=feat,fill=boruta.imp)) + geom_raster() + theme_minimal(base_size=14) + xlab("") + ylab("") + labs(fill="Boruta\nimportance") + theme(axis.text.x=element_text(angle=45, hjust=1), strip.background = element_blank(),axis.ticks = element_blank(), panel.grid.minor = element_blank(), panel.grid.major = element_blank()) + scale_fill_gradient(low="white", high="black")
 ggsave("../img/attr_uast-boruta.pdf", width=4.5, height=6)
 
+# b12 & propionate
+attr.dt[grepl("cobalamin|cobalt", name) & lasso.coef!=0, .(name,org,lasso.coef)][order(rank(name),lasso.coef)]
+attr.dt[grepl("propionate", name) & (lasso.coef!=0 & boruta.imp!=0)]
 
+# bcaa
+attr.dt[grepl("leucine|valine", name) & (lasso.coef!=0 & boruta.imp!=0)][order(rank(name),lasso.coef)]
