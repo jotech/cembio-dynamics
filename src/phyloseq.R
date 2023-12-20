@@ -90,7 +90,7 @@ sample_data(ps2)$source <- factor(sample_data(ps2)$source)
 
 # fix name for merged species
 ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb71,MYb49")] <- "Ochrobactrum sp."
-ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb176,MYb174")] <- "Citrobacter sp."
+ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb176,MYb174")] <- "Enterobacter sp."
 ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb191,MYb177")] <- "Acinetobacter sp."
 ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb371,MYb331,MYb330")] <- "Pseudomonas sp."
 # Ochrobactrums had wrong order, family, genus classified by DADA2 taxonomy
@@ -100,6 +100,8 @@ ps2@tax_table[,6][which(ps2@tax_table[,8]=="MYb71,MYb49")] <- as.character(ps2@t
 # missing genus for Comamonas
 ps2@tax_table[,6][which(ps2@tax_table[,8]=="MYb396,MYb69,MYb21")] <- "Comamonas"
 ps2@tax_table[,7][which(ps2@tax_table[,8]=="MYb396,MYb69,MYb21")] <- "Comamonas sp."
+# MYb174,176 are Enterobacter, wrong Genus classified by DADA2 taxonomy
+ps2@tax_table[,6][which(ps2@tax_table[,8]=="MYb176,MYb174")] <- "Enterobacter"
 # set taxa names to ids
 taxa_names(ps2) <- ps2@tax_table[,8]
 
